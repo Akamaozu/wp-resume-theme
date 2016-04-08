@@ -12,7 +12,7 @@
     
     array(
 
-      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Pacifico',
+      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Allura',
       'name' => 'google-fonts'
     ),
     
