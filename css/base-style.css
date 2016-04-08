@@ -1,0 +1,54 @@
+body{
+  
+  font-family: helvetica, arial, sans-serif;
+  font-size: 16px;
+}
+
+#main-header > .about-me {
+
+  box-sizing: border-box;
+
+  padding: 2em;  
+}
+
+  #main-header > .about-me > .name {
+
+    font-family: 'Exo', sans-serif;
+    font-size: 2em;
+  }
+
+  #main-header > .about-me > .title {
+
+    font-family: 'Exo', sans-serif;
+    font-size: 1.2em;
+    color: #444;
+  }
+
+  #main-header > .about-me > .intro {
+
+    font-family: 'Exo', sans-serif;
+    margin-top: 2em;
+    width: 70%;
+  }
+
+    #main-header > .about-me > .intro > p {
+
+      font-size: 3em;
+    }
+
+    #main-header > .about-me > .intro > p.subtext {
+
+      font-size: 1.5em;
+      margin-bottom: 2em;
+    }
+
+    #main-header > .about-me > .intro > p > .fa-heart {
+
+      color: #e50d0d;
+    }
+
+    #main-header > .about-me > .intro > p > .emphasis {
+
+      color: green;
+      text-decoration: underline;
+    }
