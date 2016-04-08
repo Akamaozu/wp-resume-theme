@@ -33,13 +33,15 @@ body{
     #main-header > .about-me > .intro > p {
 
       font-size: 1.5em;
+      margin-bottom: 0.25em;
     }
 
     #main-header > .about-me > .intro > p.subtext {
 
-      font-size: 1em;
+      color: #444;
+      font-size: 1.125em;
       margin-bottom: 1.5em;
-      font-family: 'Homemade Apple', cursive;
+      font-family: 'Pacifico', cursive;
     }
 
     #main-header > .about-me > .intro > p > .fa-heart {
