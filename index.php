@@ -9,6 +9,7 @@
 <html>
   <head>
     <title>Uzo Olisemeka's Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <script src="https://use.fonticons.com/556f9c16.js"></script>
     <?php wp_head(); ?>
   </head>
