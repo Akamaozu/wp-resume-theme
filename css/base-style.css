@@ -37,7 +37,7 @@ body{
     #main-header > .about-me > .intro > p {
 
       margin-top: 1.2em;
-      font-size: 1.75em;
+      font-size: 1.5em;
       margin-bottom: 0.25em;
     }
 
@@ -45,9 +45,9 @@ body{
 
       color: #444;
       font-weight: 900;
-      font-size: 1.45em;
+      font-size: 1.25em;
       margin-top: .25em;
-      font-family: 'Allura', cursive;
+      font-family: 'Kaushan Script', cursive;
     }
 
     #main-header > .about-me > .intro > p > .fa-heart {

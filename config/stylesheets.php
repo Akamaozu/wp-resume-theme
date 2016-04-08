@@ -12,7 +12,7 @@
     
     array(
 
-      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Allura',
+      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Kaushan+Script',
       'name' => 'google-fonts'
     ),
     
