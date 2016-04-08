@@ -27,20 +27,26 @@ body{
   #main-header > .about-me > .intro {
 
     font-family: 'Exo', sans-serif;
+    text-align: center;
+    width: 85%;
     margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
     #main-header > .about-me > .intro > p {
 
-      font-size: 1.5em;
+      margin-top: 1.8em;
+      font-size: 1.75em;
       margin-bottom: 0.25em;
     }
 
     #main-header > .about-me > .intro > p.subtext {
 
       color: #444;
-      font-size: 1.25em;
-      margin-bottom: 1.5em;
+      font-weight: 900;
+      font-size: 1.45em;
+      margin-top: .25em;
       font-family: 'Allura', cursive;
     }
 
@@ -59,7 +65,8 @@ body{
 
   #main-header > .about-me > .intro {
 
-    width: 70%;
-    font-size: 120%;
+    width: 60%;
+    font-size: 115%;
+    margin-left: 20%;
   }
 } 
