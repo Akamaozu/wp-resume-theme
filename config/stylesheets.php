@@ -12,7 +12,7 @@
     
     array(
 
-      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900',
+      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Homemade+Apple',
       'name' => 'google-fonts'
     ),
     
