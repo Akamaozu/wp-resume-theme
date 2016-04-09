@@ -12,7 +12,7 @@
     
     array(
 
-      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Shadows+Into+Light',
+      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Satisfy',
       'name' => 'google-fonts'
     ),
     
