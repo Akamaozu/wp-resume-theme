@@ -105,6 +105,13 @@ body{
 
       font-size: 1em;
       font-family: 'Exo', sans-serif;
+
+      cursor: pointer;
+    }
+
+    #experience > .filter > li:hover {
+
+      color: green;
     }
 
     #experience > .filter > li:last-of-type {
@@ -117,6 +124,8 @@ body{
       color: #fff;
       background-color: green;
       border-radius: .5em;
+
+      cursor: inherit;
     }
 
 @media only screen and (min-width: 720px)  {

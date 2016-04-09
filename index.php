@@ -1,7 +1,8 @@
 <?php
   
-  // load stylesheet
+  // load default css & js
     wp_enqueue_style( 'theme-base-style' );
+    wp_enqueue_script( 'theme-behavior' );
 ?>
 
 <!doctype html>
@@ -15,7 +16,6 @@
   </head>
   <body>
     <div id="main-header">
-      
       <div class="about-me">
         <div class="name">Uzo Olisemeka</div>
         <div class="title">Full-Stack Developer</div>
@@ -24,6 +24,7 @@
           <p class='subtext'>A wealth of experience using it server-side (<span class="emphasis">Node.js</span>, <span class="emphasis">Meteor</span>), in the browser (<span class="emphasis">web apps</span>, <span class="emphasis">React</span>) and for desktop applications (<span class="emphasis">Electron.js</span>).</p>
           <p>I <span class="fa fa-heart"></span> WordPress</p>
           <p class='subtext'>If you're building <span class="emphasis">themes</span> from scratch, maintaining or extending existing ones, I'd love to help.</p>
+        </div>
       </div>
     </div>
 
@@ -31,9 +32,9 @@
       <div class="title">Previous Experience</div>
       <div class="subtitle">Filter my experiences to quickly find what's relevant to you</div>
       <ul class="filter">
-        <li class="active">All</li>
-        <li>JavaScript</li>
-        <li>Wordpress</li>
+        <li data-filter="all">All</li>
+        <li data-filter="js">JavaScript</li>
+        <li data-filter="wp">Wordpress</li>
       </ul>
     </div>
 

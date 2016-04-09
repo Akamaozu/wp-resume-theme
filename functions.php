@@ -5,7 +5,7 @@
 
       if( !$stylesheet['name'] || !$stylesheet['src'] ){
 
-        throw new Exception("Improperly defined stylesheet object in " . get_template_directory() . '/config/styesheets.php' , 1);
+        throw new Exception("Improperly defined stylesheet object in " . get_template_directory() . '/config/stylesheets.php' , 1);
       }
       
       if( !$stylesheet['deps'] ) $stylesheet['deps'] = array();
@@ -13,5 +13,20 @@
       if( !$stylesheet['version'] ) $stylesheet['version'] = '0.0.1';
 
       wp_register_style( $stylesheet['name'], $stylesheet['src'], $stylesheet['deps'], $stylesheet['version'], $stylesheet['media'] );
+    }
+  
+  // register theme javascript files      
+    foreach( include( 'config/javascript.php' ) as $script ){
+
+      if( !$script['name'] || !$script['src'] ){
+
+        throw new Exception("Improperly defined javascript object in " . get_template_directory() . '/config/javascript.php' , 1);
+      }
+      
+      if( !$script['deps'] ) $script['deps'] = array();
+      if( !$script['version'] ) $script['version'] = '0.0.1';
+      if( !$script['in_footer'] ) $script['in_footer'] = true;
+
+      wp_register_script( $script['name'], $script['src'], $script['deps'], $script['version'], $script['in_footer'] );
     }
 ?>
