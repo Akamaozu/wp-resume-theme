@@ -21,9 +21,9 @@
         <div class="title">Full-Stack Developer</div>
         <div class="intro">
           <p>I <span class="fa fa-heart"></span> JavaScript</p>
-          <p class='subtext'>If you're using JavaScript on the server (<span class="emphasis">Node.js</span>, <span class="emphasis">Meteor</span>, <span class="emphasis">microservices</span>) or in the browser (<span class="emphasis">web apps</span>, <span class="emphasis">React.js</span>, <span class="emphasis">Browserify</span>), I'd be a valuable addition to your team.</p>
+          <p class='subtext'>A wealth of experience using it server-side (<span class="emphasis">Node.js</span>, <span class="emphasis">Meteor</span>), in the browser (<span class="emphasis">web apps</span>, <span class="emphasis">React</span>) and for desktop applications (<span class="emphasis">Electron.js</span>).</p>
           <p>I <span class="fa fa-heart"></span> WordPress</p>
-          <p class='subtext'>If you're building <span class="emphasis">themes</span> / <span class="emphasis">plugins</span> from scratch, maintaining or extending existing ones, I'd love to help.</p>
+          <p class='subtext'>If you're building <span class="emphasis">themes</span> from scratch, maintaining or extending existing ones, I'd love to help.</p>
       </div>
     </div>
 
