@@ -53,6 +53,8 @@ body{
     #main-header > .about-me > .intro > p > .fa-heart {
 
       color: #e50d0d;
+      font-size: 80%;
+      padding: 0 .125em;
     }
 
     #main-header > .about-me > .intro > p > .emphasis {
