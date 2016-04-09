@@ -12,7 +12,7 @@
     
     array(
 
-      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Indie+Flower',
+      'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Shadows+Into+Light',
       'name' => 'google-fonts'
     ),
     
