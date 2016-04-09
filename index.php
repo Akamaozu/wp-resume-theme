@@ -15,6 +15,7 @@
   </head>
   <body>
     <div id="main-header">
+      
       <div class="about-me">
         <div class="name">Uzo Olisemeka</div>
         <div class="title">Full-Stack Developer</div>
@@ -25,6 +26,17 @@
           <p class='subtext'>If you're building <span class="emphasis">themes</span> / <span class="emphasis">plugins</span> from scratch, maintaining or extending existing ones, I'd love to help.</p>
       </div>
     </div>
+
+    <div id="experience">
+      <div class="title">Previous Experience</div>
+      <div class="subtitle">Filter my experiences to quickly find what's relevant to you</div>
+      <ul class="filter">
+        <li class="active">All</li>
+        <li>JavaScript</li>
+        <li>Wordpress</li>
+      </ul>
+    </div>
+
     <?php wp_footer(); ?>
   </body>
 </html>

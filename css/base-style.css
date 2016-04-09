@@ -63,6 +63,62 @@ body{
       text-decoration: underline;
     }
 
+#experience {
+
+  max-width: 85%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  #experience > .title {
+
+    font-family: 'Exo', sans-serif;
+    font-size: 1.75em;
+    margin-bottom: .25em;
+  }
+
+  #experience > .subtitle {
+
+    font-family: 'Satisfy', cursive;
+    margin-bottom: .3em;
+    font-size: 1.25em;
+    font-weight: 900;
+    color: #444;
+  }
+
+  #experience > .filter {
+
+    text-align: center;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+  }
+
+    #experience > .filter > li {
+
+      display: inline-block;
+      padding: .375em .5em;
+      margin-right: .25em;
+      
+      margin-bottom: .25em;
+      margin-top: .25em;
+
+      font-size: 1em;
+      font-family: 'Exo', sans-serif;
+    }
+
+    #experience > .filter > li:last-of-type {
+
+      margin-right: 0;
+    }
+
+    #experience > .filter > li.active {
+
+      color: #fff;
+      background-color: green;
+      border-radius: .5em;
+    }
+
 @media only screen and (min-width: 720px)  {
 
   #main-header > .about-me {
