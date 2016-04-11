@@ -50,7 +50,8 @@
           </div>          
           <div class="notes">
             <p>CyclusBreak is a Student-Counsellor Relationship Manager built by <a href="http://blueportsoftware.com">Blueport Software</a>. It connects university students with their counsellors, making it easier for students to get the help needed for optimal academic and social success.</p> 
-            <p>I was contracted to build out features like notifications (in-app and via email), admin interfaces, generate reports on Cyclus Break's business objectives, automated exporting of reports as Excel documents and emailing them to the appropriate stakeholders.</p>
+            <p>I automated generating reports on Cyclus Break's business objectives, exporting as Excel documents and emailing them to appropriate stakeholders on a schedule.</p>
+            <p>Also implemented notifications (in-app and via email) and some admin config interfaces.</p>
           </div>
         </li>
         <li class="item" data-type="javascript" data-tags="electron, node.js">

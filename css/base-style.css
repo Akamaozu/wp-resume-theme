@@ -131,6 +131,7 @@ body{
   #experience > .items {
 
     margin-top: 1em;
+    margin-bottom: 2em;
   }
 
     #experience > .items > .item {
@@ -185,15 +186,15 @@ body{
       #experience > .items > .item > .notes {
 
         font-family: sans-serif;
+        padding-left: 1em;
+        padding-right: 1em;
       }
 
       #experience > .items > .item > .notes > p {
 
         font-family: 'Roboto Condensed', sans-serif;
-        margin-bottom: 1em;
-        font-size: 1.15em;
-        padding-left: 1em;
-        padding-right: 1em;
+        margin-bottom: 1.25em;
+        line-height: 1.25em;
         color: #444;
       }
 
