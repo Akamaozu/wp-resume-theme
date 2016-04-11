@@ -81,7 +81,7 @@ body{
   #experience > .subtitle {
 
     font-family: 'Satisfy', cursive;
-    margin-bottom: .3em;
+    margin-bottom: .75em;
     font-size: 1.25em;
     font-weight: 900;
     color: #444;
@@ -127,6 +127,86 @@ body{
 
       cursor: inherit;
     }
+
+  #experience > .items {
+
+    margin-top: 1em;
+  }
+
+    #experience > .items > .item {
+
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3em;
+    }
+
+    #experience > .items > .item:last-of-type {
+
+      margin-bottom: 0;
+    }
+
+      #experience > .items > .item > .header {
+
+        padding-bottom: 1em;
+        font-family: 'Exo', sans-serif;
+      }
+
+        #experience > .items > .item > .header > .when,
+        #experience > .items > .item > .header > .title {
+
+          width: 100%;
+        }
+
+        #experience > .items > .item > .header > .when {
+
+          font-size: 1em;
+          margin-bottom: .1em;
+        }
+
+        #experience > .items > .item > .header > .title {
+
+          font-size: 1.5em;
+          margin-bottom: .2em;
+        }
+
+        #experience > .items > .item > .header > .tags > li {
+
+          display: inline-block;
+          margin-right: 1em;
+          color: #555;
+        }
+
+        #experience > .items > .item > .header > .tags > li:last-of-type {
+
+          margin-right: 0;
+        }
+
+      #experience > .items > .item > .notes {
+
+        font-family: sans-serif;
+      }
+
+      #experience > .items > .item > .notes > p {
+
+        font-family: 'Roboto Condensed', sans-serif;
+        margin-bottom: 1em;
+        font-size: 1.15em;
+        padding-left: 1em;
+        padding-right: 1em;
+        color: #444;
+      }
+
+      #experience > .items > .item > .notes > p:last-of-type {
+
+        margin-bottom: 0;
+      }
+
+        #experience > .items > .item > .notes > p > a {
+
+          font-weight: 900;
+          color: green;
+        }
 
 @media only screen and (min-width: 720px)  {
 
