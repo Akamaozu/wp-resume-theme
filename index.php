@@ -69,6 +69,29 @@
             <p>Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p>
           </div>
         </li>
+        <li class="item" data-type="wordpress" data-tags="theme">
+          <div class="header">
+            <div class="when">2011</div>
+            <div class="title">YKNightlights</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Theme</li>
+              <li>Photoshop</li>
+              <li>Illustrator</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p>I was commissioned to build <a href="http://yknightlights.designbymobi.us">a unique theme for a lifestyle blog</a>.We focused on building little details that created a delightful experience for the readers.</p> 
+            <ol> 
+              <li>When your mouse hovered on a preview card, other page elements dimmed to create more emphasis.</li> 
+              <li>Keyboard arrow keys were augmented to scroll through the post preview cards.</li> 
+              <li>When you visit a post page, the interface scrolls you directly to the content.</li> 
+              <li>Up and down arrow keys on the keyboard were context-aware, automatically scrolling to sections unless it was in the article body, in which case it behaved normally.</li>
+            </ol>
+            <p>In addition to building the theme from scratch, I also illustrated their logo.</p>
+          </div>
+        </li>
       </ul>
     </div>
 

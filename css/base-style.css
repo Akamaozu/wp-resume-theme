@@ -190,12 +190,20 @@ body{
         padding-right: 1em;
       }
 
-      #experience > .items > .item > .notes > p {
+      #experience > .items > .item > .notes > p,
+      #experience > .items > .item > .notes > ol > li {
 
         font-family: 'Roboto Condensed', sans-serif;
         margin-bottom: 1.25em;
         line-height: 1.25em;
         color: #444;
+      }
+
+      #experience > .items > .item > .notes > ol {
+
+        list-style-type: circle;
+        padding-left: 1.25em;
+        font-size: 90%;
       }
 
       #experience > .items > .item > .notes > p:last-of-type {
