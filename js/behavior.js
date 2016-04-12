@@ -3,20 +3,27 @@ var state = {};
     state.experience = {};
     state.experience.filter = null;
 
-jQuery( '#experience > .filter > li' ).click( function( event ){
+// BOOTSTRAP ENVIRONMENT
 
-  var filter_params = this.getAttribute( 'data-filter' );
+  // behavior on click for previous experience filter items
+    jQuery( '#experience > .filter > li' ).click( function( event ){
 
-  if( !filter_params ) return;
+      var filter_params = this.getAttribute( 'data-filter' );
 
-  state.experience.filter = filter_params;
+      if( !filter_params ) return;
 
-  update_experience_filter_ui(); 
-});
+      state.experience.filter = filter_params;
+
+      jQuery.publish('experience-filter-updated', filter_params);
+    });
+
+  // update ui when experience filter is changed
+    jQuery.subscribe('experience-filter-updated', update_experience_filter_ui );
+    jQuery.subscribe('experience-filter-updated', filter_experience_items );
 
 jQuery( document ).ready( function(){
 
-  update_experience_filter_ui();
+  jQuery.publish( 'experience-filter-updated', state.experience.filter );
 });
 
 function update_experience_filter_ui(){
@@ -48,4 +55,45 @@ function update_experience_filter_ui(){
 
   current_active_tab.removeClass('active');
   next_tab.addClass('active');
+}
+
+function filter_experience_items(){
+
+  var filtered = null;
+
+  switch( state.experience.filter ){
+
+    case 'wp':
+
+      filtered = 'wordpress';
+    break;
+
+    case 'js':
+
+      filtered = 'javascript';
+    break;
+  }
+
+  var all_experiences = jQuery( '#experience > .items > .item' );
+
+  for( var i = 0; i < all_experiences.length; i++ ){
+    
+    var experience = jQuery( all_experiences[i] );
+
+    if( !filtered ){
+
+      experience.removeClass('hidden');
+      continue;
+    }
+        
+    var experience_type = all_experiences[i].getAttribute('data-type');
+
+    if( experience_type.toLowerCase() == filtered ){
+
+      experience.removeClass('hidden');
+      continue;
+    }
+
+    experience.addClass('hidden'); 
+  };
 }

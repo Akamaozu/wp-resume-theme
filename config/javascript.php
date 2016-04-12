@@ -8,8 +8,14 @@
 
       'src' =>  $theme_stylesheet_directory . '/js/behavior.js',
       'name' => 'theme-behavior',
+      'deps' => array('jquery', 'jquery-tiny-pubsub')
+    ),
+    
+    array(
+
+      'src' =>  $theme_stylesheet_directory . '/js/jquery-tiny-pubsub.js',
+      'name' => 'jquery-tiny-pubsub',
       'deps' => array('jquery')
     )
   );
-
 ?>

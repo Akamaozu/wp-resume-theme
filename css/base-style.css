@@ -147,6 +147,11 @@ body{
       margin-bottom: 0;
     }
 
+      #experience > .items > .item.hidden {
+
+        display: none;
+      }
+
       #experience > .items > .item > .header {
 
         padding-bottom: 1em;
