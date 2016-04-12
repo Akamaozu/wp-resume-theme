@@ -65,7 +65,7 @@
             </ul>
           </div>          
           <div class="notes">
-            <p>I <a href="http://http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to programmatically generate a report on all PDFs in a folder (and arbitrarily nested subfolders).</p> 
+            <p>I <a href="http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to programmatically generate a report on all PDFs in a folder (and arbitrarily nested subfolders).</p> 
             <p>Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p>
           </div>
         </li>
