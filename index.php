@@ -50,7 +50,7 @@
           </div>          
           <div class="notes">
             <p>CyclusBreak is a Student-Counsellor Relationship Manager built by <a href="http://blueportsoftware.com">Blueport Software</a>. It connects university students with their counsellors, making it easier for students to get the help needed for optimal academic and social success.</p> 
-            <p>I automated generating reports on Cyclus Break's business objectives, exporting as Excel documents and emailing them to appropriate stakeholders on a schedule.</p>
+            <p>I automated generating reports on Cyclus Break's business objectives. The reports were also exported as Excel documents and emailed to appropriate stakeholders on a schedule.</p>
             <p>Also implemented notifications (in-app and via email) and some admin config interfaces.</p>
           </div>
         </li>
@@ -65,7 +65,8 @@
             </ul>
           </div>          
           <div class="notes">
-            <p>After discovering a business process where work that could be automated was still done manually, I <a href="http://http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to do it. Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p> 
+            <p>I <a href="http://http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to programmatically generate a report on all PDFs in a folder (and arbitrarily nested subfolders).</p> 
+            <p>Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p>
           </div>
         </li>
       </ul>
