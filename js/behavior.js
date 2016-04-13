@@ -26,6 +26,8 @@ var state = {};
   // update ui when experience filter is changed
     jQuery.subscribe('experience-filter-updated', update_experience_filter_ui );
     jQuery.subscribe('experience-filter-updated', filter_experience_items );
+  
+  // update ui when filtering is completed
     jQuery.subscribe('experience-items-filtered', update_experience_masonry );
 
 jQuery( document ).ready( function(){

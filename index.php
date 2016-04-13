@@ -37,6 +37,21 @@
         <li data-filter="wp">Wordpress</li>
       </ul>
       <ul class="items">
+        <li class="item" data-type="wordpress" data-tags="theme">
+          <div class="header">
+            <div class="when">2015</div>
+            <div class="title">Zikoko Polls</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Theme</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
+            <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
+            <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
+          </div>
+        </li>
         <li class="item" data-type="javascript" data-tags="meteor, web app">
           <div class="header">
             <div class="when">2015</div>
@@ -69,19 +84,30 @@
             <p>Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p>
           </div>
         </li>
-        <li class="item" data-type="wordpress" data-tags="theme">
+        <li class="item" data-type="javascript" data-tags="node.js, heroku, web app, microservices">
           <div class="header">
             <div class="when">2015</div>
-            <div class="title">Zikoko Polls</div>
+            <div class="title">FTP Pusher</div>
             <ul class="tags">
-              <li>WordPress</li>
-              <li>Theme</li>
+              <li>Node.js</li>
+              <li>Microservices</li>
+              <li>Web App</li>
+              <li>Heroku</li>
+              <li>Redis</li>
+              <li>RabbitMQ</li>
+              <li>Socket.io</li>
             </ul>
           </div>          
           <div class="notes">
-            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
-            <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
-            <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
+            <p>To solve <a href="http://wadup.com.ng">Wadup's</a> time-consuming and expensive process of downloading media assets to a laptop or phone just to reupload it on their servers, I <a href="http://designbymobi.us/transfer-files-to-your-blog-in-seconds/">built an app</a> to solve the problem.</p>
+            <p>You give it a link and a filename to save the link's content as. The app streams the content of the file straight to Wadup's server.</p>
+              <ol>
+                <li>The app is decoupled. Individual services communicate using pubsub via Redis.</li>
+                <li>Push requests are placed on a queue (RabbitMQ), workers process the queue.</li>
+                <li>Workers use Socket.io to communicate transfer progress to the web app.</li>
+                <li>Everything is comfortably hosted on a Heroku free plan. Even more savings for Wadup.</li> 
+              </ol>
+            <p>To date, the app has sucessfully streamed gigabytes of content directly to their servers, providing significant savings in operations cost.</p>
           </div>
         </li>
         <li class="item" data-type="wordpress" data-tags="theme">
