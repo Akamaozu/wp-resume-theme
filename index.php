@@ -51,7 +51,7 @@
           <div class="notes">
             <p>CyclusBreak is a Student-Counsellor Relationship Manager built by <a href="http://blueportsoftware.com">Blueport Software</a>. It connects university students with their counsellors, making it easier for students to get the help needed for optimal academic and social success.</p> 
             <p>I automated report generation of Cyclus Break's business objectives. The reports were exported as Excel documents and emailed to appropriate stakeholders on a schedule.</p>
-            <p>Also implemented notifications (in-app and via email) and some admin config interfaces.</p>
+            <p>I also implemented the app's invitation system, notifications (in-app and via email) and some admin config interfaces.</p>
           </div>
         </li>
         <li class="item" data-type="javascript" data-tags="electron, node.js">
@@ -90,6 +90,21 @@
               <li>Up and down arrow keys on the keyboard were context-aware, automatically scrolling to sections unless it was in the article body, in which case it behaved normally.</li>
             </ol>
             <p>In addition to building the theme from scratch, I also illustrated their logo.</p>
+          </div>
+        </li>
+        <li class="item" data-type="wordpress" data-tags="theme">
+          <div class="header">
+            <div class="when">2015</div>
+            <div class="title">Zikoko Polls</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Theme</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
+            <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
+            <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
           </div>
         </li>
       </ul>

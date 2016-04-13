@@ -8,7 +8,7 @@ var state = {};
   // behavior on click for previous experience filter items
     jQuery( '#experience > .filter > li' ).click( function( event ){
 
-      var filter_params = this.getAttribute( 'data-filter' );
+      var filter_params = jQuery( this ).attr( 'data-filter' );
 
       if( !filter_params ) return;
 
@@ -86,7 +86,7 @@ function filter_experience_items(){
       continue;
     }
         
-    var experience_type = all_experiences[i].getAttribute('data-type');
+    var experience_type = experience.attr('data-type');
 
     if( experience_type.toLowerCase() == filtered ){
 
