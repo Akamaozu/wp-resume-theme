@@ -16,6 +16,13 @@
       'src' =>  $theme_stylesheet_directory . '/js/jquery-tiny-pubsub.js',
       'name' => 'jquery-tiny-pubsub',
       'deps' => array('jquery')
+    ),
+    
+    array(
+
+      'src' =>  $theme_stylesheet_directory . '/js/masonry-layout.js',
+      'name' => 'masonry-layout',
+      'deps' => array('jquery')
     )
   );
 ?>
