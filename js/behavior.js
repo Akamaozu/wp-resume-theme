@@ -89,7 +89,6 @@ function filter_experience_items(){
 
     if( !filtered ){
 
-      console.log( 'showing item' );
       experience.addClass('visible');
       continue;
     }
