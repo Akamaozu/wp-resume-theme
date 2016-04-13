@@ -136,21 +136,23 @@ body{
 
     #experience > .items > .item {
 
+      display: none;
+
       width: 95%;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 3em;
     }
 
+    #experience > .items > .item.visible {
+
+      display: inline-block;
+    }
+
     #experience > .items > .item:last-of-type {
 
       margin-bottom: 0;
     }
-
-      #experience > .items > .item.hidden {
-
-        display: none;
-      }
 
       #experience > .items > .item > .header {
 
@@ -254,8 +256,6 @@ body{
       #experience > .items > .item {
 
         width: 40%;
-        display: inline-block;
-        float: left;
         margin-left: 5%;
         margin-right: 5%;
       }

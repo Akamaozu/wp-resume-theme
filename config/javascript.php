@@ -8,7 +8,7 @@
 
       'src' =>  $theme_stylesheet_directory . '/js/behavior.js',
       'name' => 'theme-behavior',
-      'deps' => array('jquery', 'jquery-tiny-pubsub')
+      'deps' => array('jquery', 'jquery-tiny-pubsub', 'masonry-layout')
     ),
     
     array(

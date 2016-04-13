@@ -71,6 +71,21 @@
         </li>
         <li class="item" data-type="wordpress" data-tags="theme">
           <div class="header">
+            <div class="when">2015</div>
+            <div class="title">Zikoko Polls</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Theme</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
+            <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
+            <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
+          </div>
+        </li>
+        <li class="item" data-type="wordpress" data-tags="theme">
+          <div class="header">
             <div class="when">2011</div>
             <div class="title">YKNightlights</div>
             <ul class="tags">
@@ -90,21 +105,6 @@
               <li>Up and down arrow keys on the keyboard were context-aware, automatically scrolling to sections unless it was in the article body, in which case it behaved normally.</li>
             </ol>
             <p>In addition to building the theme from scratch, I also illustrated their logo.</p>
-          </div>
-        </li>
-        <li class="item" data-type="wordpress" data-tags="theme">
-          <div class="header">
-            <div class="when">2015</div>
-            <div class="title">Zikoko Polls</div>
-            <ul class="tags">
-              <li>WordPress</li>
-              <li>Theme</li>
-            </ul>
-          </div>          
-          <div class="notes">
-            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
-            <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
-            <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
           </div>
         </li>
       </ul>

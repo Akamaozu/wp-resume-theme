@@ -17,9 +17,16 @@ var state = {};
       jQuery.publish('experience-filter-updated', filter_params);
     });
 
+  // instantiate masonry
+    state.experience.masonry = jQuery( '#experience > .items' ).masonry({
+
+      itemSelector: '.visible'
+    });
+
   // update ui when experience filter is changed
     jQuery.subscribe('experience-filter-updated', update_experience_filter_ui );
     jQuery.subscribe('experience-filter-updated', filter_experience_items );
+    jQuery.subscribe('experience-items-filtered', update_experience_masonry );
 
 jQuery( document ).ready( function(){
 
@@ -82,7 +89,8 @@ function filter_experience_items(){
 
     if( !filtered ){
 
-      experience.removeClass('hidden');
+      console.log( 'showing item' );
+      experience.addClass('visible');
       continue;
     }
         
@@ -90,10 +98,18 @@ function filter_experience_items(){
 
     if( experience_type.toLowerCase() == filtered ){
 
-      experience.removeClass('hidden');
+      experience.addClass('visible');
       continue;
     }
 
-    experience.addClass('hidden'); 
+    experience.removeClass('visible'); 
   };
+
+  jQuery.publish('experience-items-filtered');
+}
+
+function update_experience_masonry(){
+
+  state.experience.masonry.masonry('reloadItems');
+  state.experience.masonry.masonry('layout');
 }
