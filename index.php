@@ -37,6 +37,27 @@
         <li data-filter="wp">Wordpress</li>
       </ul>
       <ul class="items">
+        <li class="item" data-type="javascript" data-tags="electron, node.js">
+          <div class="header">
+            <div class="when">2016</div>
+            <div class="title">Receipt Printer Software</div>
+            <ul class="tags">
+              <li>Desktop App</li>
+              <li>Electron</li>
+              <li>Node.js</li>
+              <li>Web App</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p><a href="http://18techs.com">18Techs</a> needed to build receipt printer software with very special requirements.</p>
+            <ol>
+              <li>Integrate the desktop software with the web-based Point of Sale interface.</li>
+              <li>The receipts were HTML markup so the software needed to be able to interpret HTML to the printer.</li>
+              <li>The software must streamline the process of printing a receipt by bypassing the print prompt window.</li>
+            </ol>
+            <p>I built a Desktop App with Electron to mediate between the Point of Sale (POS) interface and the cashier's computer. It enabled them to trivially update the receipt design, the POS interface or reconfigure which printer the receipt was sent to without ever being on-site.</p>
+          </div>
+        </li>
         <li class="item" data-type="wordpress" data-tags="theme">
           <div class="header">
             <div class="when">2015</div>
