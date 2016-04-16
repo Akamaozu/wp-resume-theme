@@ -36,6 +36,8 @@
         <li data-filter="js">JavaScript</li>
         <li data-filter="wp">Wordpress</li>
       </ul>
+      <ul class="tags">
+      </ul>
       <ul class="items">
         <li class="item" data-type="javascript" data-tags="electron, node.js">
           <div class="header">

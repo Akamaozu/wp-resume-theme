@@ -87,14 +87,26 @@ body{
     color: #444;
   }
 
-  #experience > .filter {
+  #experience > .filter,
+  #experience > .tags {
 
     text-align: center;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
   }
 
-    #experience > .filter > li {
+  #experience > .tags {
+
+    display: none;
+  }
+
+  #experience > .active {
+
+    display: block;
+  }
+
+    #experience > .filter > li,
+    #experience > .tags > li {
 
       display: inline-block;
       padding: .375em .5em;
@@ -109,17 +121,20 @@ body{
       cursor: pointer;
     }
 
-    #experience > .filter > li:hover {
+    #experience > .filter > li:hover,
+    #experience > .tags > li:hover {
 
       color: green;
     }
 
-    #experience > .filter > li:last-of-type {
+    #experience > .filter > li:last-of-type,
+    #experience > .tags > li:last-of-type {
 
       margin-right: 0;
     }
 
-    #experience > .filter > li.active {
+    #experience > .filter > li.active,
+    #experience > .tags > li.active {
 
       color: #fff;
       background-color: green;
