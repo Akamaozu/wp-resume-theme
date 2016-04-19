@@ -1,201 +1,306 @@
 var state = {};
 
-    state.experience = {};
-    state.experience.filter = null;
-    state.experience.tag = null;
-
 // BOOTSTRAP ENVIRONMENT
+  
+  // setup previous experience
+    setup_experience_module();
 
-  // behavior on click for previous experience filter items
-    jQuery( '#experience > .filter > li' ).click( function( event ){
+  // on start ...
+    jQuery( document ).ready( function(){
 
-      var filter_params = jQuery( this ).attr( 'data-filter' );
-
-      if( !filter_params ) return;
-
-      state.experience.filter = filter_params;
-
-      jQuery.publish('experience-filter-updated', filter_params);
+      // set default filter to all
+        jQuery.publish( 'update-experience-filter', 'all' );
     });
 
-  // behavior on click for previous experience item tags
-    jQuery( '#experience > .tags' ).click( function( event ){
+function setup_experience_module(){
 
-      var filter_params = jQuery( event.target ).attr( 'data-tag' );
+  state.experience = {};
 
-      if( !filter_params ) return;
+  setup_filter_module();
+  setup_item_module();
+  setup_tag_module();
 
-      state.experience.tag = filter_params;
+  function setup_filter_module(){
 
-      jQuery.subscribe('tag-filter-completed', on_complete);
-      jQuery.publish('experience-tag-updated', filter_params);
+    // change state of experience filter
+    // -> #update-experience-filter | string
+    // <- #experience-filter-updated | string
+      jQuery.subscribe('update-experience-filter', function( e, filter ){
 
-      function on_complete(){
+        if( typeof filter === 'undefined' ) return;
+        if( state.experience.filter === filter ) return;
 
-        jQuery.unsubscribe('tag-filter-completed', on_complete);
-        jQuery.publish('experience-items-filtered');
-      }
-    });
+        state.experience.filter = filter;
 
-  // instantiate masonry
-    state.experience.items = jQuery( '#experience > .items' ).masonry({
+        jQuery.publish('experience-filter-updated', filter);      
+      });
 
-      itemSelector: '.visible'
-    });
+    // update active filter in dom when experience filter is changed
+    // -> #experience-filter-updated | string
+      jQuery.subscribe('experience-filter-updated', function update_experience_filter_ui( e, filter ){
 
-  // update ui when experience filter is changed
-    jQuery.subscribe('experience-filter-updated', update_experience_filter_ui );
-    jQuery.subscribe('experience-filter-updated', filter_experience_items );
-  
-  // update ui when filtering is completed
-    jQuery.subscribe('experience-items-filtered', update_experience_masonry );
+        var current_active_tab = jQuery( '#experience > .filter  > li.active' ),
+            next_tab;
 
-  // update ui when experience tag is changed
-    jQuery.subscribe('experience-tag-updated', tag_filter_experience_items);
-  
-  // tag filter experience items
-    jQuery.subscribe('tag-filter-experience-items', tag_filter_experience_items );
+        switch( filter ){
 
-jQuery( document ).ready( function(){
+          case 'wp':
 
-  jQuery.publish( 'experience-filter-updated', state.experience.filter );
-});
+            next_tab = jQuery( '#experience > .filter  > li[data-filter="wp"]' );
+          break;
 
-function update_experience_filter_ui(){
+          case 'js':
 
-  var current_active_tab = jQuery( '#experience > .filter  > li.active' ),
-      next_tab;
+            next_tab = jQuery( '#experience > .filter  > li[data-filter="js"]' );
+          break;
 
-  switch( state.experience.filter ){
+          case 'all':
+          default:
 
-    case 'wp':
-
-      next_tab = jQuery( '#experience > .filter  > li[data-filter="wp"]' );
-    break;
-
-    case 'js':
-
-      next_tab = jQuery( '#experience > .filter  > li[data-filter="js"]' );
-    break;
-
-    case 'all':
-    default:
-
-      next_tab = jQuery( '#experience > .filter  > li[data-filter="all"]' );
-    break;
-  }
-
-  if( next_tab.length === 0 ) return;
-  if( current_active_tab.length > 0 && current_active_tab[0] === next_tab[0] ) return;
-
-  current_active_tab.removeClass('active');
-  next_tab.addClass('active');
-}
-
-function filter_experience_items(){
-
-  var filtered = null;
-
-  switch( state.experience.filter ){
-
-    case 'wp':
-
-      filtered = 'wordpress';
-    break;
-
-    case 'js':
-
-      filtered = 'javascript';
-    break;
-  }
-
-  var all_experiences = jQuery( '#experience > .items > .item' );
-
-  for( var i = 0; i < all_experiences.length; i++ ){
-    
-    var experience = jQuery( all_experiences[i] );
-
-    if( !filtered ){
-
-      experience.addClass('visible');
-      continue;
-    }
-        
-    var experience_type = experience.attr('data-type');
-
-    if( experience_type.toLowerCase() == filtered ){
-
-      experience.addClass('visible');
-      continue;
-    }
-
-    experience.removeClass('visible'); 
-  };
-
-  jQuery.subscribe( 'tag-filter-completed', complete_filtering );
-  jQuery.publish( 'tag-filter-experience-items' );
-  
-  function complete_filtering(){
-
-    jQuery.publish('experience-items-filtered'); 
-    jQuery.unsubscribe('tag-filter-completed', complete_filtering);   
-  }
-}
-
-function tag_filter_experience_items(){
-
-  var tag_module = jQuery( '#experience > .tags' );
-
-  switch( state.experience.filter ){
-
-    case 'js':
-
-      var tag_filter = state.experience.tag,
-          js_experiences = jQuery( '#experience > .items > .item[data-type=javascript]' );
-
-      for( var i = 0; i < js_experiences.length; i++ ){
-        
-        var experience = jQuery( js_experiences[i] ),
-            tags = experience.attr('data-tags').split(', ');
-
-        if( !tag_filter ){
-
-          experience.addClass('visible');
-          continue;
+            next_tab = jQuery( '#experience > .filter  > li[data-filter="all"]' );
+          break;
         }
 
-        if( tags.indexOf( tag_filter ) > -1 ){
+        if( next_tab.length === 0 ) return;
+        if( current_active_tab.length > 0 && current_active_tab[0] === next_tab[0] ) return;
 
-          experience.addClass('visible');
-          continue;
-        }
-            
-        experience.removeClass('visible'); 
-      };
+        current_active_tab.removeClass('active');
+        next_tab.addClass('active');
+      });
 
-      tag_module.addClass('active');
+    // filter option click behavior 
+    // <- #update-experience-filter | string
+      jQuery( '#experience > .filter' ).click( function( event ){
 
-      tag_module.html(
+        var filter_params = jQuery( event.target ).attr( 'data-filter' );
 
-        "<li data-tag='node.js' " + (tag_filter === "node.js" ? "class=\"active\"" : "") + ">Node.js</li>" +
-        "<li data-tag='electron' " + (tag_filter === "electron" ? "class=\"active\"" : "" ) + ">Electron</li>" +
-        "<li data-tag='meteor' " + (tag_filter === "meteor" ? "class=\"active\"" : "") + ">Meteor</li>"
-      );
-       
-    break;
+        if( !filter_params ) return;
 
-    default:
-      
-      state.experience.tag = null;       
-      tag_module.removeClass('active');      
-    break;
+        jQuery.publish('update-experience-filter', filter_params);
+      });
   }
 
-  jQuery.publish( 'tag-filter-completed' );
-}
+  function setup_tag_module(){
 
-function update_experience_masonry(){
+    state.experience.persist_tag_state = {};
 
-  state.experience.items.masonry('reloadItems');
-  state.experience.items.masonry('layout');
+    // change state of experience tag
+    // -> #update-experience-tag | string
+    // <- #experience-tag-updated | string
+      jQuery.subscribe('update-experience-tag', function( e, tag ){
+
+        if( typeof tag === 'undefined' ) return;
+        if( state.experience.tag === tag ) return;
+
+        state.experience.tag = tag;
+
+        jQuery.publish('experience-tag-updated', tag);      
+      });
+
+    // persist tag state when filter state updates
+      jQuery.subscribe('experience-tag-updated', function preserve_tag_state( e, tag ){
+
+        state.experience.persist_tag_state[ state.experience.filter ] = tag;
+      });
+
+    // update tag module ui when filter state updates
+      jQuery.subscribe('experience-filter-updated', function render_tag_module( e, filter ){
+
+        var tag_module = jQuery( '#experience > .tags' );
+
+        switch( filter ){
+
+          case 'js':
+
+            tag_module.addClass('active');
+
+            var active_tag;
+
+            switch( state.experience.tag ){
+
+              case 'meteor':
+              case 'node.js':
+              case 'electron':
+                
+                active_tag = state.experience.tag;
+              break;
+
+              default:
+
+                active_tag = 'all';
+              break;
+            }
+
+            tag_module.html(
+
+              "<li data-tag='all' " + ( active_tag == 'all' ? 'class="active"' : '' ) + ">All</li>" +
+              "<li data-tag='node.js' " + ( active_tag == 'node.js' ? 'class="active"' : '' ) + ">Node.js</li>" +
+              "<li data-tag='electron' " + ( active_tag == 'electron' ? 'class="active"' : '' ) + ">Electron</li>" +
+              "<li data-tag='meteor' " + ( active_tag == 'meteor' ? 'class="active"' : '' ) + ">Meteor</li>"
+            );
+
+          break;
+
+          default:
+                   
+            tag_module.removeClass('active');      
+          break;
+        }
+      });
+
+    // reload previous tag state when returning to a new filter state
+      jQuery.subscribe('experience-tag-updated', function update_experience_tag_ui(){
+
+        var filter = state.experience.filter;
+
+        switch( filter ){
+
+          case 'js':
+            jQuery.publish('update-experience-tag', ( state.experience.persist_tag_state[ filter ] ? state.experience.persist_tag_state[ filter ] : 'all'));
+          break;
+
+          default:
+            jQuery.publish('update-experience-tag', ( state.experience.persist_tag_state[ filter ] ? state.experience.persist_tag_state[ filter ] : 'n/a'));
+          break;
+        }
+      });
+
+    // update active tag in dom when experience tag is changed
+      jQuery.subscribe('experience-tag-updated', function highlight_active_tag( e, tag ){
+
+        var tag_module = jQuery( '#experience > .tags' ),
+            current_tag_dom = tag_module.find('.active'),
+            next_tag_dom = tag_module.find('[data-tag="' + tag.toLowerCase() + '"]');
+
+        if( current_tag_dom.length > 0 ) jQuery( current_tag_dom[0] ).removeClass('active');
+        if( next_tag_dom.length > 0 ) jQuery( next_tag_dom[0] ).addClass('active');
+        else{
+
+          var all_tag_dom = tag_module.find('[data-tag="all"]');
+
+          if( all_tag_dom.length < 1 ) return;
+
+          all_tag_dom = jQuery( all_tag_dom[0] );
+
+          all_tag_dom.addClass('active');
+        }
+      });
+
+    // tag option click behavior
+    // <- #update-experience-tag | string
+      jQuery( '#experience > .tags' ).click( function( event ){
+
+        var tag = jQuery( event.target ).attr( 'data-tag' );
+
+        if( !tag ) return;
+
+        jQuery.publish('update-experience-tag', tag);
+      });
+  }
+
+  function setup_item_module(){
+
+    // setup masonry
+      state.experience.items = jQuery( '#experience > .items' ).masonry({
+
+        itemSelector: '.visible'
+      });
+
+    // update ui when experience filter is updated
+    // -> #experience-filter-updated | string
+      jQuery.subscribe('experience-filter-updated', function filter_experience_items( e, filter ){
+
+        var filtered = null;
+
+        switch( filter ){
+
+          case 'wp':
+
+            filtered = 'wordpress';
+          break;
+
+          case 'js':
+
+            filtered = 'javascript';
+          break;
+        }
+
+        var all_experiences = jQuery( '#experience > .items > .item' );
+
+        for( var i = 0; i < all_experiences.length; i++ ){
+          
+          var experience = jQuery( all_experiences[i] );
+
+          if( !filtered ){
+
+            experience.addClass('visible');
+            continue;
+          }
+              
+          var experience_type = experience.attr('data-type');
+
+          if( experience_type.toLowerCase() == filtered ){
+
+            experience.addClass('visible');
+            continue;
+          }
+
+          experience.removeClass('visible'); 
+        };
+
+        jQuery.publish('filter-experience-completed');
+      });
+
+    // update ui when experience tag is updated
+    // -> #experience-tag-updated | string      
+      jQuery.subscribe('experience-tag-updated', function filter_experience_by_tag( e, tag ){
+
+        var tag_module = jQuery( '#experience > .tags' );
+
+        switch( state.experience.filter ){
+
+          case 'js':
+
+            var tag_filter = tag,
+                js_experiences = jQuery( '#experience > .items > .item[data-type=javascript]' );
+
+            for( var i = 0; i < js_experiences.length; i++ ){
+              
+              var experience = jQuery( js_experiences[i] ),
+                  tags = experience.attr('data-tags').split(', ');
+
+              if( !tag_filter || tag_filter == 'all' ){
+
+                experience.addClass('visible');
+                continue;
+              }
+
+              if( tags.indexOf( tag_filter ) > -1 ){
+
+                experience.addClass('visible');
+                continue;
+              }
+                  
+              experience.removeClass('visible'); 
+            };
+          break;
+
+          default:
+                         
+          break;
+        }
+
+        jQuery.publish( 'filter-experience-by-tag-completed' );
+      });
+
+    // neatly align items with masonry after filters are completed
+      jQuery.subscribe('filter-experience-completed', update_experience_masonry );
+      jQuery.subscribe('filter-experience-by-tag-completed', update_experience_masonry );
+
+    function update_experience_masonry(){
+
+      state.experience.items.masonry('reloadItems');
+      state.experience.items.masonry('layout');
+    }
+  }
 }
