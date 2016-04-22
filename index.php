@@ -215,6 +215,40 @@
         </li>
         <li class="item" data-type="wordpress" data-tags="theme">
           <div class="header">
+            <div class="when">2013</div>
+            <div class="title">Sprout at Work</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Theme</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p>I brought the designs for <a href="http://sproutatwork.com">Sprout's</a> website to life.</p>
+            <p>Some design elements were created in CSS so it would be easier to modify, instead of creating and deploying new assets. A light sprinkling of JavaScript was used to bring the menu button to life.</p>
+            <p>Overall a pretty simple project technically, but it was a great showcase of turning a design into a WordPress theme.</p>
+          </div>
+        </li>
+        <li class="item" data-type="wordpress" data-tags="security, recovery">
+          <div class="header">
+            <div class="when">2012</div>
+            <div class="title">Marine Magnetics Recovery</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Security</li>
+              <li>Recovery</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p>The <a href="http://marinemagnetics.com">Marine Magnetics</a> site was hacked and I was called in to bring it back online.</p>
+            <ol>
+              <li>The theme files were corrupted beyond recovery and there were no backups. I had to rebuild the site using a previous view from the Wayback Machine.</li>
+              <li>I analyzed the WordPress installation, found the source of the malware and removed it.</li>
+            </ol>            
+            <p>After recovery I noticed there were bugs in the site's JavaScript so I cleaned those up as well.</p>
+          </div>
+        </li>
+        <li class="item" data-type="wordpress" data-tags="theme">
+          <div class="header">
             <div class="when">2011</div>
             <div class="title">YKNightlights</div>
             <ul class="tags">
