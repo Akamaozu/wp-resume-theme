@@ -75,6 +75,42 @@
             <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
           </div>
         </li>
+        <li class="item" data-type="javascript" data-tags="web app, heroku">
+          <div class="header">
+            <div class="when">2015</div>
+            <div class="title">Image Watermarker</div>
+            <ul class="tags">
+              <li>Web App</li>
+              <li>Heroku</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p>A simple utility web app built for <a href="http://unravellingnigeria.com">Unravelling Nigeria</a> to simplify adding watermarks on images.</p>
+            <p>Drag and drop images into your browser and it will return a link to the watermarked version of the image.</p> 
+          </div>
+        </li>
+        <li class="item" data-type="wordpress" data-tags="theme, multisite, multilingual">
+          <div class="header">
+            <div class="when">2015</div>
+            <div class="title">Moksha Yoga</div>
+            <ul class="tags">
+              <li>Wordpress</li>
+              <li>Theme</li>
+              <li>Multisite</li>
+              <li>Multilingual</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p><a href="http://visualinclination.com">Visual Inclination</a> was building a network of 60+ WordPress sites for a client.</p>
+            <ol>
+              <li>The network contained two different Yoga studio brands.</li>
+              <li>Each brand had a headquarter (HQ) site and a site for each studio location.</li>
+              <li>Each studio generated their own content, but also received content from the HQ site.</li>
+              <li>Each site was fully translatable to three different languages.</li>
+            </ol>
+            <p>After simplifying complex data dependencies needed to generate key pages, the sites were built and successfully deployed.</p> 
+          </div>
+        </li>
         <li class="item" data-type="javascript" data-tags="meteor, web app">
           <div class="header">
             <div class="when">2015</div>
@@ -131,6 +167,50 @@
                 <li>Everything is comfortably hosted on a Heroku free plan. Even more savings for Wadup.</li> 
               </ol>
             <p>To date, the app has sucessfully streamed gigabytes of content directly to their servers, providing significant savings in operations cost.</p>
+          </div>
+        </li>
+        <li class="item" data-type="javascript" data-tags="web app, react, offline, node.js, heroku, mysql">
+          <div class="header">
+            <div class="when">2014</div>
+            <div class="title">Mizbeach Pricelist Editor</div>
+            <ul class="tags">
+              <li>Web App</li>
+              <li>Offline-Capable</li>
+              <li>Node.js</li>
+              <li>React</li>
+              <li>Heroku</li>
+              <li>MySQL</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p>I built a <a href="http://pricingapp.designbymobi.us">pricelist editor</a> to make pricing information simpler to update.</p> 
+            <ol> 
+              <li>The app works in your browser without an internet connection.</li> 
+              <li>You can work when the app is offline; it will push your changes to the server when you get back online.</li>
+            </ol>
+            <p>Also built offline-capable <a href="http://retail.mizbeach.com">companion apps</a> for displaying the prices.</p>
+          </div>
+        </li>
+        <li class="item" data-type="wordpress" data-tags="theme">
+          <div class="header">
+            <div class="when">2013</div>
+            <div class="title">Tour D'Afrique</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Theme</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>          
+          <div class="notes">
+            <p><a href="https://catalystworkshop.ca">Catalyst Workshop</a> was making huge upgrades to a client's site and I was responsible for bringing many of the designs to life.</p>
+            <p>My primary responsibility was implementing the design and behavior of <a href="http://tdaglobalcycling.com/tour-dafrique">Tour Overview section</a>.</p> 
+            <ol> 
+              <li>Each tour overview and sections are independent pages with unique URLs, but loaded subsequent sections dynamically.</li> 
+              <li>Map embeds for each tour section are loaded dynamically to avoid unnecessary downloads of heavy assets. Embeds were also cached to prevent more data and time waste for visiting a section multiple times.</li> 
+              <li>URLs dynamically updated when sections changed.</li> 
+              <li>Clicking on a section in the tour breakdown dynamically loaded the section and scrolled the visitor to the section details.</li> 
+            </ol>
+            <p>My favorite part of was the strategies employed to keep the page behavior very fast. The redesign was beautiful, but the experience would have been subpar if the section was sluggish.</p>
           </div>
         </li>
         <li class="item" data-type="wordpress" data-tags="theme">
