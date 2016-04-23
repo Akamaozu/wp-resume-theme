@@ -4,27 +4,44 @@ body{
   font-size: 16px;
 }
 
-#main-header > .about-me {
+#main-header {
 
   box-sizing: border-box;
+  width: 100%;
 
-  padding: 1.25em;
+  padding: 1.25em 1.25em 0 1.25em;
 }
 
-  #main-header > .about-me > .name {
+#main-header.detached {
+
+  position: fixed;
+  font-size: 80%;
+  background-color: #fff;
+
+  transition: font-size .2s ease-in;
+}
+
+  #main-header > .name {
 
     font-family: 'Exo', sans-serif;
     font-size: 1.5em;
   }
 
-  #main-header > .about-me > .title {
+  #main-header > .title {
 
     font-family: 'Exo', sans-serif;
     font-size: 1em;
     color: #444;
   }
 
-  #main-header > .about-me > .intro {
+#about-me {
+
+  box-sizing: border-box;
+
+  padding: 1.25em;
+}
+
+  #about-me > .intro {
 
     font-family: 'Exo', sans-serif;
     text-align: center;
@@ -34,14 +51,14 @@ body{
     margin-right: auto;
   }
 
-    #main-header > .about-me > .intro > p {
+    #about-me > .intro > p {
 
       margin-top: 1.2em;
       font-size: 1.5em;
       margin-bottom: 0.25em;
     }
 
-    #main-header > .about-me > .intro > p.subtext {
+    #about-me > .intro > p.subtext {
 
       color: #444;
       font-weight: 900;
@@ -50,14 +67,14 @@ body{
       font-family: 'Satisfy', cursive;
     }
 
-    #main-header > .about-me > .intro > p > .fa-heart {
+    #about-me > .intro > p > .fa-heart {
 
       color: #e50d0d;
       font-size: 80%;
       padding: 0 .125em;
     }
 
-    #main-header > .about-me > .intro > p > .emphasis {
+    #about-me > .intro > p > .emphasis {
 
       color: green;
       text-decoration: underline;
@@ -242,24 +259,35 @@ body{
 
 @media only screen and (min-width: 720px)  {
 
-  #main-header > .about-me {
+  #main-header {
+    
+    padding: 2em 2em 0 2em;
+    font-size: 120%;
+  }
+
+  #about-me {
     
     padding: 2em;
     font-size: 120%;
   }
 
-  #main-header > .about-me > .intro {
+  #main-header {
+
+    padding-bottom: 0;
+  }
+
+  #about-me > .intro {
 
     width: 60%;
     margin-left: 20%;
   }
 
-    #main-header > .about-me > .intro > p {    
+    #about-me > .intro > p {    
 
       margin-top: 1.5em;
     }
 
-    #main-header > .about-me > .intro > p.subtext {    
+    #about-me > .intro > p.subtext {    
 
       margin-top: .25em;
     }
