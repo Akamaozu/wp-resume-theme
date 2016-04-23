@@ -218,9 +218,12 @@ function setup_experience_module(){
   function setup_item_module(){
 
     // setup masonry
-      state.experience.items = jQuery( '#experience > .items' ).masonry({
+      jQuery( window ).on('load', function(){
 
-        itemSelector: '.visible'
+        state.experience.items = jQuery( '#experience > .items' ).masonry({
+
+          itemSelector: '.visible'
+        });
       });
 
     // update ui when experience filter is updated
