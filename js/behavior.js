@@ -2,8 +2,8 @@ var state = {};
 
 // BOOTSTRAP ENVIRONMENT
   
-  // setup previous experience
-    setup_experience_module();
+  setup_header_module();  
+  setup_experience_module();
 
   // on start ...
     jQuery( document ).ready( function(){
@@ -11,6 +11,23 @@ var state = {};
       // set default filter to all
         jQuery.publish( 'update-experience-filter', 'all' );
     });
+
+function setup_header_module(){
+
+  setup_detacher();
+
+  function setup_detacher(){
+
+    var page = jQuery( document ),
+        header = jQuery('#main-header');
+
+    page.on( 'scroll', jQuery.throttle( 100, function(){
+
+      if( page.scrollTop() > 0 ) header.addClass( 'detached' );
+      else header.removeClass( 'detached' );
+    }));
+  }
+}
 
 function setup_experience_module(){
 
