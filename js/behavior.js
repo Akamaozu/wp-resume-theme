@@ -321,7 +321,7 @@ function setup_experience_module(){
 
       var experiences_masonry = state.experience.masonry;
 
-      // experiences_masonry.reloadItems();
+      experiences_masonry.reloadItems();
       experiences_masonry.layout();
     }
   }
