@@ -220,7 +220,7 @@ function setup_experience_module(){
     // setup masonry
       jQuery( window ).on('load', function(){
 
-        state.experience.items = jQuery( '#experience > .items' ).masonry({
+        state.experience.masonry = new Masonry( '#experience > .items', {
 
           itemSelector: '.visible'
         });
@@ -319,8 +319,10 @@ function setup_experience_module(){
 
     function update_experience_masonry(){
 
-      state.experience.items.masonry('reloadItems');
-      state.experience.items.masonry('layout');
+      var experiences_masonry = state.experience.masonry;
+
+      // experiences_masonry.reloadItems();
+      experiences_masonry.layout();
     }
   }
 }
