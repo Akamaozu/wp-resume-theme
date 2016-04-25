@@ -109,8 +109,6 @@ function setup_experience_module(){
         if( typeof tag === 'undefined' ) return;
         if( state.experience.tag === tag ) return;
 
-        if( tag == 'js' || tag == 'wp' ) throw new Error( 'soemone polluted state' );
-
         state.experience.tag = tag;
 
         jQuery.publish('experience-tag-updated', tag);      
