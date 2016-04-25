@@ -12,8 +12,6 @@
     <title>Uzo Olisemeka's Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <script src="https://use.fonticons.com/556f9c16.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-shim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
     <?php wp_head(); ?>
   </head>
   <body>
