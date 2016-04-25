@@ -18,7 +18,7 @@ function setup_header_module(){
 
   function setup_detacher(){
 
-    var page = jQuery( document ),
+    var page = jQuery( window ),
         header = jQuery('#main-header');
 
     page.on( 'scroll', jQuery.throttle( 100, function(){
