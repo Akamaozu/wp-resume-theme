@@ -10,13 +10,13 @@ body{
   position: fixed;
   
   width: 100%;
+  background-color: #fff;
   padding: 1.25em 1.25em 0 1.25em;
 }
 
 #main-header.detached {
 
   font-size: 80%;
-  background-color: #fff;
 
   z-index: 100;
 
