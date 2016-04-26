@@ -2,8 +2,10 @@ var state = {};
 
 // BOOTSTRAP ENVIRONMENT
   
-  setup_header_module();  
+  setup_header_module();
+  setup_about_me_module(); 
   setup_experience_module();
+  setup_contact_form();
 
   // on start ...
     jQuery( document ).ready( function(){
@@ -27,6 +29,43 @@ function setup_header_module(){
       else header.removeClass( 'detached' );
     }));
   }
+
+  ResizeSensor( jQuery( '#main-header' )[0], jQuery.debounce( 20, function(){
+  
+    jQuery.publish('main-header-resized', jQuery( '#main-header' )[0]);
+  }));
+
+  jQuery.subscribe('show-contact-form', function(){
+
+    var contact_btn = jQuery( '#main-header > .contact-me' );
+
+    contact_btn.removeClass('fa-envelope');
+    contact_btn.addClass('fa-times');
+  });
+
+  jQuery.subscribe('hide-contact-form', function(){
+
+    var contact_btn = jQuery( '#main-header > .contact-me' );
+
+    contact_btn.removeClass('fa-times');
+    contact_btn.addClass('fa-envelope');
+  });
+
+  jQuery( '#main-header > .contact-me' ).on('click', function(){
+
+    jQuery.publish( 'toggle-contact-form' );
+  });
+}
+
+function setup_about_me_module(){
+
+  jQuery.subscribe('main-header-resized', function( e, header ){
+
+    var header = jQuery( header ),
+        total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
+
+    jQuery( '#about-me' ).css( 'padding-top', total_offset + 'px' );
+  });  
 }
 
 function setup_experience_module(){
@@ -326,4 +365,56 @@ function setup_experience_module(){
       experiences.masonry('layout');
     }
   }
+}
+
+function setup_contact_form(){
+
+  jQuery.subscribe('main-header-resized', function( e, header ){
+
+    var header = jQuery( header ),
+        total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
+
+    jQuery( '#contact-form' ).css( 'padding-top', total_offset + 'px' );
+  });
+
+  jQuery.subscribe('show-contact-form', function(){
+
+    jQuery( '#contact-form' ).addClass('staged');
+
+    setTimeout( function(){
+
+      jQuery( '#contact-form' ).addClass('active');
+    }, 25);
+  });
+
+  jQuery.subscribe('hide-contact-form', function(){
+
+    jQuery( '#contact-form' ).removeClass('active');
+    
+    setTimeout( function(){
+
+      jQuery( '#contact-form' ).removeClass('staged');
+      
+    }, 300);
+  });
+
+  jQuery.subscribe('toggle-contact-form', function(){
+
+    var form = jQuery( '#contact-form' ),
+        is_active = form.hasClass( 'staged' );
+
+    if( is_active ) jQuery.publish( 'hide-contact-form' );
+    else jQuery.publish( 'show-contact-form' );
+  });
+
+  // prevent body from having scroll bars when contact form is visible
+    jQuery.subscribe('show-contact-form', function(){
+
+      jQuery( document.body ).addClass( 'scroll-lock' );
+    });
+
+    jQuery.subscribe('hide-contact-form', function(){
+
+      jQuery( document.body ).removeClass( 'scroll-lock' );
+    });
 }

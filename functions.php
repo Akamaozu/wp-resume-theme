@@ -29,4 +29,14 @@
 
       wp_register_script( $script['name'], $script['src'], $script['deps'], $script['version'], $script['in_footer'] );
     }
+
+  // contact form widget slot
+    register_sidebar( array(
+      'name' => 'Contact Form Widget',
+      'id' => 'contact_form_widget',
+      'before_widget' => '<div class="widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
+    ));
 ?>

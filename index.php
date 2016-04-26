@@ -18,6 +18,7 @@
     <div id="main-header">
       <div class="name">Uzo Olisemeka</div>
       <div class="title">Full-Stack Developer</div>
+      <div class="contact-me fa fa-envelope"></div>
     </div>
 
     <div id="about-me">
@@ -272,6 +273,10 @@
           </div>
         </li>
       </ul>
+    </div>
+
+    <div id="contact-form">
+      <?php dynamic_sidebar( 'contact_form_widget' ); ?>
     </div>
 
     <?php wp_footer(); ?>

@@ -4,12 +4,19 @@ body{
   font-size: 16px;
 }
 
+body.scroll-lock {
+
+  overflow: hidden;
+}
+
 #main-header {
 
   box-sizing: border-box;
+  text-align: center;
   position: fixed;
   
   width: 100%;
+  z-index: 100;
   padding: 1.25em;
   background-color: #fff;  
 
@@ -20,25 +27,36 @@ body{
 
   font-size: 80%;
 
-  z-index: 100;
-
   padding-top: 1.125em;
   padding-bottom: 1.125em;
 
   box-shadow: 0 0 .25em .125em #eee;
+
 }
+
+  #main-header > .name,
+  #main-header > .title {
+
+    font-family: 'Exo', sans-serif;
+  }
 
   #main-header > .name {
 
-    font-family: 'Exo', sans-serif;
     font-size: 1.5em;
   }
 
   #main-header > .title {
 
-    font-family: 'Exo', sans-serif;
     font-size: 1em;
     color: #444;
+  }
+
+  #main-header > .contact-me{
+
+    margin-top: 1em;
+
+    font-weight: 900;
+    font-size: 1.25em;
   }
 
 #about-me {
@@ -263,6 +281,59 @@ body{
 
           font-weight: 900;
           color: green;
+        }
+
+  #contact-form {
+
+    display: none;
+    position: fixed;
+    background-image: url('../img/overlay-background.png');
+    
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    padding: 4em 2.4em;
+    opacity: 0;
+    top: 0;
+
+    transition: opacity .125s ease-in .125s;
+  }
+
+  #contact-form.staged {
+
+    display: block;
+  }
+
+  #contact-form.active {
+
+    opacity: 1;
+
+    transition: opacity .125s ease-in;
+  }
+
+    #contact-form form {
+
+      margin: 100% auto 0 auto;
+
+      transition: margin .05s ease-in .05s;
+    }
+
+    #contact-form.active form {
+
+      margin-top: 3em;
+    }
+
+      #contact-form form p {
+
+        margin-bottom: 2em;
+      }
+
+        #contact-form form p input,
+        #contact-form form p textarea {
+
+          margin-top: .6em;
         }
 
 @media only screen and (min-width: 720px) {
