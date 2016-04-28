@@ -364,6 +364,11 @@ body.scroll-lock {
     padding-bottom: 1em;
   }
 
+    #main-header > .contact-me {
+
+      font-size: 100%;
+    }
+
   #about-me {
     
     padding: 2em;
