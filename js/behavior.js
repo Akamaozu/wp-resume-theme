@@ -16,51 +16,58 @@ var state = {};
 
 function setup_header_module( state ){
 
-  setup_detacher();
-
-  state.header = {};
-
+  state.header = {};  
+  state.header.dom = jQuery('#main-header');
   state.header.contact_me_dom = jQuery( '#main-header > .contact-me' );
 
-  function setup_detacher(){
-
-    var page = jQuery( window ),
-        header = jQuery('#main-header');
-
-    page.on( 'scroll', jQuery.throttle( 100, function(){
-
-      if( page.scrollTop() > 0 ) header.addClass( 'detached' );
-      else header.removeClass( 'detached' );
-    }));
-  }
-
-  ResizeSensor( jQuery( '#main-header' )[0], jQuery.debounce( 20, function(){
-  
-    jQuery.publish('main-header-resized', jQuery( '#main-header' )[0]);
-  }));
-
-  jQuery.subscribe('show-contact-form', function(){
-
-    var contact_btn = state.header.contact_me_dom;
-
-    contact_btn
-      .addClass('fa fa-times')
-      .html('');
-  });
-
-  jQuery.subscribe('hide-contact-form', function(){
-
-    var contact_btn = state.header.contact_me_dom;
-
-    contact_btn
-      .html('Contact Me')
-      .removeClass('fa fa-times');
-  });
+  setup_detacher();
+  setup_resize_sensor();
+  setup_contact_form_controls();
 
   state.header.contact_me_dom.on('click', function(){
 
     jQuery.publish( 'toggle-contact-form' );
   });
+
+  function setup_detacher(){
+
+    var page = jQuery( window );
+
+    page.on( 'scroll', jQuery.throttle( 20, function(){
+
+      if( page.scrollTop() > 0 ) state.header.dom.addClass( 'detached' );
+      else state.header.dom.removeClass( 'detached' );
+    }));
+  }
+
+  function setup_resize_sensor(){
+    
+    ResizeSensor( state.header.dom[0], jQuery.debounce( 20, function(){
+    
+      jQuery.publish( 'main-header-resized', state.header.dom[0] );
+    }));
+  }
+
+  function setup_contact_form_controls(){
+    
+    jQuery.subscribe('show-contact-form', function(){
+
+      var contact_btn = state.header.contact_me_dom;
+
+      contact_btn
+        .addClass('fa fa-times')
+        .html('');
+    });
+
+    jQuery.subscribe('hide-contact-form', function(){
+
+      var contact_btn = state.header.contact_me_dom;
+
+      contact_btn
+        .html('Contact Me')
+        .removeClass('fa fa-times');
+    });
+  }
 }
 
 function setup_about_me_module(){
