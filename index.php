@@ -16,9 +16,9 @@
   </head>
   <body>
     <div id="main-header">
+      <div class="contact-me">Contact Me</div>
       <div class="name">Uzo Olisemeka</div>
       <div class="title">Full-Stack Developer</div>
-      <div class="contact-me fa fa-envelope"></div>
     </div>
 
     <div id="about-me">

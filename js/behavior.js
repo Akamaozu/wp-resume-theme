@@ -2,10 +2,10 @@ var state = {};
 
 // BOOTSTRAP ENVIRONMENT
   
-  setup_header_module();
+  setup_header_module( state );
   setup_about_me_module(); 
   setup_experience_module();
-  setup_contact_form();
+  setup_contact_form( state );
 
   // on start ...
     jQuery( document ).ready( function(){
@@ -14,9 +14,13 @@ var state = {};
         jQuery.publish( 'update-experience-filter', 'all' );
     });
 
-function setup_header_module(){
+function setup_header_module( state ){
 
   setup_detacher();
+
+  state.header = {};
+
+  state.header.contact_me_dom = jQuery( '#main-header > .contact-me' );
 
   function setup_detacher(){
 
@@ -37,21 +41,23 @@ function setup_header_module(){
 
   jQuery.subscribe('show-contact-form', function(){
 
-    var contact_btn = jQuery( '#main-header > .contact-me' );
+    var contact_btn = state.header.contact_me_dom;
 
-    contact_btn.removeClass('fa-envelope');
-    contact_btn.addClass('fa-times');
+    contact_btn
+      .addClass('fa fa-times')
+      .html('');
   });
 
   jQuery.subscribe('hide-contact-form', function(){
 
-    var contact_btn = jQuery( '#main-header > .contact-me' );
+    var contact_btn = state.header.contact_me_dom;
 
-    contact_btn.removeClass('fa-times');
-    contact_btn.addClass('fa-envelope');
+    contact_btn
+      .html('Contact Me')
+      .removeClass('fa fa-times');
   });
 
-  jQuery( '#main-header > .contact-me' ).on('click', function(){
+  state.header.contact_me_dom.on('click', function(){
 
     jQuery.publish( 'toggle-contact-form' );
   });
@@ -367,41 +373,44 @@ function setup_experience_module(){
   }
 }
 
-function setup_contact_form(){
+function setup_contact_form( state ){
+
+  state.contact_form = {};
+
+  state.contact_form.dom = jQuery( '#contact-form' );
 
   jQuery.subscribe('main-header-resized', function( e, header ){
 
     var header = jQuery( header ),
         total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
 
-    jQuery( '#contact-form' ).css( 'padding-top', total_offset + 'px' );
+    state.contact_form.dom.css( 'padding-top', total_offset + 'px' );
   });
 
   jQuery.subscribe('show-contact-form', function(){
 
-    jQuery( '#contact-form' ).addClass('staged');
+    state.contact_form.dom.addClass('staged');
 
     setTimeout( function(){
 
-      jQuery( '#contact-form' ).addClass('active');
+      state.contact_form.dom.addClass('active');
     }, 25);
   });
 
   jQuery.subscribe('hide-contact-form', function(){
 
-    jQuery( '#contact-form' ).removeClass('active');
+    state.contact_form.dom.removeClass('active');
     
     setTimeout( function(){
 
-      jQuery( '#contact-form' ).removeClass('staged');
+      state.contact_form.dom.removeClass('staged');
       
     }, 300);
   });
 
   jQuery.subscribe('toggle-contact-form', function(){
 
-    var form = jQuery( '#contact-form' ),
-        is_active = form.hasClass( 'staged' );
+    var is_active = state.contact_form.dom.hasClass( 'staged' );
 
     if( is_active ) jQuery.publish( 'hide-contact-form' );
     else jQuery.publish( 'show-contact-form' );
