@@ -19,7 +19,7 @@ body.scroll-lock {
   padding: 1.25em;
   background-color: #fff;  
 
-  transition: font-size .1s ease-out;
+  transition: font-size .1s ease-in;
 }
 
 #main-header.detached {
@@ -309,29 +309,17 @@ body.scroll-lock {
     overflow: auto;
 
     padding: 4em 2.4em;
-    opacity: 0;
     top: 0;
-
-    transition: opacity .125s ease-in .125s;
-  }
-
-  #contact-form.staged {
-
-    display: block;
   }
 
   #contact-form.active {
 
-    opacity: 1;
-
-    transition: opacity .125s ease-in;
+    display: block;
   }
 
     #contact-form form {
 
       margin: 100% auto 0 auto;
-
-      transition: margin .05s ease-in .05s;
     }
 
     #contact-form.active form {

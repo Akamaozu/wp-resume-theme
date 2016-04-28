@@ -1,5 +1,7 @@
 var state = {};
 
+    state.body = jQuery( document.body );
+
 // BOOTSTRAP ENVIRONMENT
   
   setup_header_module( state );
@@ -383,54 +385,48 @@ function setup_experience_module(){
 function setup_contact_form( state ){
 
   state.contact_form = {};
-
   state.contact_form.dom = jQuery( '#contact-form' );
 
-  jQuery.subscribe('main-header-resized', function( e, header ){
+  setup_contact_form_controls();
 
-    var header = jQuery( header ),
-        total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
+  // maintain alignment with resized header
+    jQuery.subscribe('main-header-resized', function( e, header ){
 
-    state.contact_form.dom.css( 'padding-top', total_offset + 'px' );
-  });
+      var header = jQuery( header ),
+          total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
 
-  jQuery.subscribe('show-contact-form', function(){
-
-    state.contact_form.dom.addClass('staged');
-
-    setTimeout( function(){
-
-      state.contact_form.dom.addClass('active');
-    }, 25);
-  });
-
-  jQuery.subscribe('hide-contact-form', function(){
-
-    state.contact_form.dom.removeClass('active');
-    
-    setTimeout( function(){
-
-      state.contact_form.dom.removeClass('staged');
-      
-    }, 300);
-  });
-
-  jQuery.subscribe('toggle-contact-form', function(){
-
-    var is_active = state.contact_form.dom.hasClass( 'staged' );
-
-    if( is_active ) jQuery.publish( 'hide-contact-form' );
-    else jQuery.publish( 'show-contact-form' );
-  });
+      state.contact_form.dom.css( 'padding-top', total_offset + 'px' );
+    });
 
   // prevent body from having scroll bars when contact form is visible
     jQuery.subscribe('show-contact-form', function(){
 
-      jQuery( document.body ).addClass( 'scroll-lock' );
+      state.body.addClass( 'scroll-lock' );
     });
 
     jQuery.subscribe('hide-contact-form', function(){
 
-      jQuery( document.body ).removeClass( 'scroll-lock' );
+      state.body.removeClass( 'scroll-lock' );
     });
+
+  function setup_contact_form_controls(){
+
+    jQuery.subscribe('show-contact-form', function(){
+
+      state.contact_form.dom.addClass('active');
+    });
+
+    jQuery.subscribe('hide-contact-form', function(){
+
+      state.contact_form.dom.removeClass('active');
+    });
+
+    jQuery.subscribe('toggle-contact-form', function(){
+
+      var is_active = state.contact_form.dom.hasClass( 'active' );
+
+      if( is_active ) jQuery.publish( 'hide-contact-form' );
+      else jQuery.publish( 'show-contact-form' );
+    });
+  }
 }
