@@ -355,7 +355,8 @@ body.scroll-lock {
 
     #contact-form form {
 
-      margin: 100% auto 0 auto;
+      margin: 0 auto;
+      font-family: 'Roboto Condensed', sans-serif;
     }
 
     #contact-form.active form {
@@ -365,13 +366,19 @@ body.scroll-lock {
 
       #contact-form form p {
 
-        margin-bottom: 2em;
+        margin-bottom: 1em;
       }
 
         #contact-form form p input,
         #contact-form form p textarea {
 
-          margin-top: .6em;
+          padding: .25em;
+          margin-top: .35em;
+        }
+
+        #contact-form form p textarea {
+
+          height: 8em;
         }
 
 @media only screen and (min-width: 720px) {
