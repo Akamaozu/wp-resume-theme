@@ -89,7 +89,23 @@ function setup_about_me_module( state ){
       var total_offset = jQuery( header_dom.offsetParent()[0] ).offset().top + header_dom.innerHeight();
 
       state.about_me.dom.css( 'padding-top', total_offset + 'px' );
-    });  
+    });
+
+  // activate intro links
+    jQuery( '#about-me > .intro .filter' ).on('click', function( e ){
+
+      var link = jQuery( e.target ),
+          filter = link.attr('data-filter'),
+          tag = link.attr('data-tag');
+
+      if( !filter || !state.header.dom ) return;
+
+      jQuery.publish( 'update-experience-filter', filter );
+
+      if( tag ) jQuery.publish( 'update-experience-tag', tag );
+
+      jQuery( document.body ).animate({ scrollTop: jQuery( '#experience' ).offset().top - state.header.dom.outerHeight() - 48 });
+    });
 }
 
 function setup_experience_module(){
@@ -192,16 +208,6 @@ function setup_experience_module(){
 
         if( current_tag_dom.length > 0 ) jQuery( current_tag_dom[0] ).removeClass('active');
         if( next_tag_dom.length > 0 ) jQuery( next_tag_dom[0] ).addClass('active');
-        else{
-
-          var all_tag_dom = tag_module.find('[data-tag="all"]');
-
-          if( all_tag_dom.length < 1 ) return;
-
-          all_tag_dom = jQuery( all_tag_dom[0] );
-
-          all_tag_dom.addClass('active');
-        }
       });
 
     // update tag module ui when filter state updates

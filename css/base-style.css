@@ -151,6 +151,11 @@ body.scroll-lock {
       text-decoration: underline;
     }
 
+    #about-me > .intro > p > .filter {
+
+      cursor: pointer;
+    }
+
 #experience {
 
   max-width: 85%;
