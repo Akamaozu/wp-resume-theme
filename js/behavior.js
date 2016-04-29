@@ -5,7 +5,7 @@ var state = {};
 // BOOTSTRAP ENVIRONMENT
   
   setup_header_module( state );
-  setup_about_me_module(); 
+  setup_about_me_module( state ); 
   setup_experience_module();
   setup_contact_form( state );
 
@@ -72,15 +72,24 @@ function setup_header_module( state ){
   }
 }
 
-function setup_about_me_module(){
+function setup_about_me_module( state ){
 
-  jQuery.subscribe('main-header-resized', function( e, header ){
+  state.about_me = {};
+  state.about_me.dom = jQuery( '#about-me' );
 
-    var header = jQuery( header ),
-        total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
+  // auto-adjust top padding of about me section as header resizes
+    jQuery.subscribe('main-header-resized', function( e, header ){
 
-    jQuery( '#about-me' ).css( 'padding-top', total_offset + 'px' );
-  });  
+      var header_dom; 
+
+      if ( state.header.dom ) header_dom = state.header.dom;
+      else if( header ) header_dom = jQuery( header );
+      else return;
+
+      var total_offset = jQuery( header_dom.offsetParent()[0] ).offset().top + header_dom.innerHeight();
+
+      state.about_me.dom.css( 'padding-top', total_offset + 'px' );
+    });  
 }
 
 function setup_experience_module(){

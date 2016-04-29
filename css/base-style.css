@@ -77,18 +77,49 @@ body.scroll-lock {
 
   box-sizing: border-box;
 
-  padding: 1.25em;
   padding-top: 5em;
+
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
 }
+
+  #about-me > .title {
+
+    font-family: 'Exo', sans-serif;
+    font-size: 1.75em;
+    margin-bottom: .25em;
+  }
+
+  #about-me > .subtitle {
+
+    font-family: 'Satisfy', cursive;
+    margin-bottom: .75em;
+    font-size: 1.25em;
+    font-weight: 900;
+    color: #444;
+  }
+
+  #about-me > .content {
+
+    border-top: 1px solid #aaa;
+    padding-top: 1em;
+  }
+
+    #about-me > .content > p {
+
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
   #about-me > .intro {
 
     font-family: 'Exo', sans-serif;
     text-align: center;
     width: 85%;
-    margin-top: 2em;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2em auto;
   }
 
     #about-me > .intro > p {
@@ -359,10 +390,7 @@ body.scroll-lock {
 
   #about-me {
     
-    padding: 2em;
     padding-top: 5em;
-
-    font-size: 120%;
   }
 
   #main-header {
@@ -373,7 +401,9 @@ body.scroll-lock {
   #about-me > .intro {
 
     width: 60%;
+    font-size: 120%;
     margin-left: 20%;
+    padding-bottom: 2em;
   }
 
     #about-me > .intro > p {    
