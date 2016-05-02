@@ -34,7 +34,7 @@
         <p>I'm a 28 year old currently living in Toronto, Canada.</p>
         <p>Started out in 2009 as a WordPress developer, building themes from scratch and creating custom features. In some cases I designed the sites from scratch, other times I worked with designers and implemented their visions.</p>
         <p>By 2011, I fell in love with JavaScript and event-driven architecture. Started building webapps and APIs for the apps to consume. Also started experimenting with Node.js for build processes and small servers.</p>
-        <p>I love teaching as much as I love programming. Between volunteering at Ladies Learning Code and teaching kids in my neighborhood, I really enjoyed breaking the ideas down to make programming simple to everyone.</p>
+        <p>In my spare time, I really love reading. Also enjoy teaching as much as programming; at Ladies Learning Code and teaching kids in my neighborhood. I really enjoyed breaking the ideas down to make programming simple to as many as possible.</p>
       </div>
     </div>
 

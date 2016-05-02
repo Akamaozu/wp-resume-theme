@@ -112,6 +112,11 @@ body.scroll-lock {
       width: 90%;
       margin-left: auto;
       margin-right: auto;
+
+      color: #444;
+      margin-bottom: 1em;
+      line-height: 1.25em;
+      font-family: 'Roboto Condensed', sans-serif;
     }
 
   #about-me > .intro {
