@@ -73,26 +73,24 @@ body.scroll-lock {
       font-family: 'FortAwesome';
     }
 
-#about-me {
+.section {
 
   box-sizing: border-box;
-
-  padding-top: 5em;
-
+  
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
 }
 
-  #about-me > .title {
+  .section > .title {
 
     font-family: 'Exo', sans-serif;
     font-size: 1.75em;
     margin-bottom: .25em;
   }
 
-  #about-me > .subtitle {
+  .section > .subtitle {
 
     font-family: 'Satisfy', cursive;
     margin-bottom: .75em;
@@ -100,6 +98,11 @@ body.scroll-lock {
     font-weight: 900;
     color: #444;
   }
+
+#about-me {
+
+  padding-top: 5em;
+}
 
   #about-me > .content {
 
@@ -162,28 +165,7 @@ body.scroll-lock {
     }
 
 #experience {
-
-  max-width: 85%;
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
 }
-
-  #experience > .title {
-
-    font-family: 'Exo', sans-serif;
-    font-size: 1.75em;
-    margin-bottom: .25em;
-  }
-
-  #experience > .subtitle {
-
-    font-family: 'Satisfy', cursive;
-    margin-bottom: .75em;
-    font-size: 1.25em;
-    font-weight: 900;
-    color: #444;
-  }
 
   #experience > .filter,
   #experience > .tags {

@@ -21,7 +21,7 @@
       <div class="title">Full-Stack Developer</div>
     </div>
 
-    <div id="about-me">
+    <div id="about-me" class="section">
       <div class="intro">
         <p>I <span class="fa fa-heart"></span> JavaScript</p>
         <p class='subtext'>A wealth of experience using it server-side (<span class="filter emphasis" data-filter="js" data-tag="node.js">Node.js</span>, <span class="filter emphasis" data-filter="js" data-tag="meteor">Meteor</span>), in the browser (<span class="filter emphasis" data-filter="js" data-tag="web app">web apps</span>, <span class="filter emphasis" data-filter="js" data-tag="react">React</span>) and for desktop applications (<span class="filter emphasis" data-filter="js" data-tag="electron">Electron</span>).</p>
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div id="experience">
+    <div id="experience" class="section">
       <div class="title">Previous Experience</div>
       <div class="subtitle">Filter my experiences to quickly find what's relevant to you</div>
       <ul class="filter">
