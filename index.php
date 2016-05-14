@@ -38,6 +38,30 @@
       </div>
     </div>
 
+    <div id="competencies" class="section">
+      <div class="title">Competencies</div>
+      <div class="subtitle">What I'm confident working with</div>
+      <ul class="content">
+        <li>CSS</li>
+        <li>Electron</li>
+        <li>Express</li>
+        <li>Git</li>
+        <li>Grunt</li>
+        <li>Heroku</li>
+        <li>HTML</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>MySQL</li>
+        <li>Node.js</li>
+        <li>PHP</li>
+        <li>RabbitMQ</li>
+        <li>React.js</li>
+        <li>Redis</li>
+        <li>Socket.io</li>
+        <li>WordPress</li>
+      </ul>
+    </div>
+
     <div id="experience" class="section">
       <div class="title">Previous Experience</div>
       <div class="subtitle">Filter my experiences to quickly find what's relevant to you</div>

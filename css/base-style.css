@@ -164,6 +164,34 @@ body.scroll-lock {
       cursor: pointer;
     }
 
+#competencies {  
+}
+
+  #competencies > .content {
+
+    width: 90%;
+    overflow: hidden;
+
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+    #competencies > .content > li {
+
+      display: block;
+      float: left;
+
+      padding: 0 .75em;
+      margin-right: .5em;
+      margin-bottom: .5em;
+      line-height: 2.25em;
+      border-radius: .25em;
+      border: 2px solid #777;
+
+      color: #777;
+      font-family: 'Exo', sans-serif;
+    }
+
 #experience {
 }
 
