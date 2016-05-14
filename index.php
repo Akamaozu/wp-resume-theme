@@ -30,11 +30,13 @@
       </div>
       <div class="title">Background</div>
       <div class="subtitle">Just a little bit about me</div>
-      <div class="content">
-        <p>I'm a 28 year old currently living in Toronto, Canada.</p>
-        <p>Started out in 2009 as a WordPress developer, building themes from scratch and creating custom features. In some cases I designed the sites from scratch, other times I worked with designers and implemented their visions.</p>
-        <p>By 2011, I fell in love with JavaScript and event-driven architecture. Started building webapps and APIs for the apps to consume. Also started experimenting with Node.js for build processes and small servers.</p>
-        <p>In my spare time, I really love reading. Also enjoy teaching as much as programming; at Ladies Learning Code and teaching kids in my neighborhood. I really enjoyed breaking the ideas down to make programming simple to as many as possible.</p>
+      <div class="content"> 
+        <p>I'm Uzo Olisemeka, a JavaScript and WordPress developer currently in Toronto, Canada.</p>
+        <p>I started off building websites back in 2009. <a href="http://www.mizbeach.com">My first website</a> is still up! I've come a long way since then.</p>
+        <p>My HTML and CSS skills are much sharper. Hand me a mockup and I'll slice and implement it for you. Responsive or otherwise. I typically aim for deep backwards compatibility, so making things work in older browsers isn't a terrible challenge.</p>
+        <p>WordPress ecosystem is my strong suite. In addition to building themes from scratch, I use action hooks and filters to make it easier to extend or modify what I do. Also have experience working with multilingual themes and multisite too.</p>
+        <p>JavaScript flows through my veins now. I've built complex web applications and implemented highly dynamic interfaces with it. I've stepped out of the browser to build server-side and desktop applications with it. I'm completely comfortable using it.</p>
+        <p>In my spare time I really enjoy reading and teaching others how to write code. Fun fact: I've taught kids in my neighborhood HTML + CSS and volunteered at <a href="http://ladieslearningcode.com">Ladies Learning Code</a> a number of times.</p>
       </div>
     </div>
 
