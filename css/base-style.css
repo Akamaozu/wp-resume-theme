@@ -99,28 +99,28 @@ body.scroll-lock {
     color: #444;
   }
 
-#about-me {
-
-  padding-top: 5em;
-}
-
-  #about-me > .content {
+  .section > .content {
 
     border-top: 1px solid #aaa;
     padding-top: 1em;
   }
 
-    #about-me > .content > p {
+#about-me {
 
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
+  padding-top: 5em;
+}
 
-      color: #444;
-      margin-bottom: 1em;
-      line-height: 1.25em;
-      font-family: 'Roboto Condensed', sans-serif;
-    }
+  #about-me > .content > p {
+
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    color: #444;
+    margin-bottom: 1em;
+    line-height: 1.25em;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
 
   #about-me > .intro {
 
