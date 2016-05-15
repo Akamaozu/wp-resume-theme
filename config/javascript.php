@@ -36,6 +36,12 @@
 
       'src' =>  $theme_stylesheet_directory . '/js/resize-sensor.js',
       'name' => 'dom-resize-sensor'
+    ),
+    
+    array(
+
+      'src' =>  $theme_stylesheet_directory . '/js/google-analytics.js',
+      'name' => 'theme-google-analytics'
     )
   );
 ?>

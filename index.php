@@ -3,6 +3,7 @@
   // load default css & js
     wp_enqueue_style( 'theme-base-style' );
     wp_enqueue_script( 'theme-behavior' );
+    wp_enqueue_script( 'theme-google-analytics' );
 ?>
 
 <!doctype html>
