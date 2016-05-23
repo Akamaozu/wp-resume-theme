@@ -122,6 +122,12 @@ body.scroll-lock {
     font-family: 'Roboto Condensed', sans-serif;
   }
 
+  #about-me > .content > p > a {
+
+    color: green;
+    font-weight: 900;
+  }
+
   #about-me > .intro {
 
     font-family: 'Exo', sans-serif;
