@@ -8,6 +8,7 @@ var state = {};
   setup_about_me_module( state ); 
   setup_experience_module();
   setup_contact_form( state );
+  setup_telemetry();
 
   // on start ...
     jQuery( document ).ready( function(){
@@ -449,4 +450,20 @@ function setup_contact_form( state ){
       else jQuery.publish( 'show-contact-form' );
     });
   }
+}
+
+function setup_telemetry(){
+
+  // report as pageview when experience items view is modified
+    jQuery.subscribe('new-layout-rendered', function record_pageview(){
+
+      var filter, tag, page;
+
+          filter = state.experience.filter;
+          tag = state.experience.tag;
+
+          page = '/experience/' + filter + ( tag ? '/' + tag : '' );
+
+      ga('send', 'pageview', page);
+    });
 }
