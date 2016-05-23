@@ -455,7 +455,7 @@ function setup_contact_form( state ){
 function setup_telemetry(){
 
   // report as pageview when experience items view is modified
-    jQuery.subscribe('new-layout-rendered', function record_pageview(){
+    jQuery.subscribe('new-layout-rendered', function record_experience_pageview(){
 
       var filter, tag, page;
 
@@ -465,5 +465,16 @@ function setup_telemetry(){
           page = '/experience/' + filter + ( tag ? '/' + tag : '' );
 
       ga('send', 'pageview', page);
+    });
+
+  // handle contact form views as different pages
+    jQuery.subscribe('show-contact-form', function record_contactform_pageview(){
+
+      ga('send', 'pageview', '/contact-me');
+    });
+
+    jQuery.subscribe('hide-contact-form', function record_main_pageview(){
+
+      ga('send', 'pageview', '/');
     });
 }
