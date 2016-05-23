@@ -34,9 +34,6 @@
       <div class="content"> 
         <p>I'm Uzo Olisemeka, a JavaScript and WordPress developer currently in Toronto, Canada.</p>
         <p>I started off building websites back in 2009. <a href="http://www.mizbeach.com">My first website</a> is still up! I've come a long way since then.</p>
-        <p>My HTML and CSS skills are much sharper. Hand me a mockup and I'll slice and implement it for you. Responsive or otherwise.</p>
-        <p>WordPress ecosystem is my strong suite. In addition to building themes from scratch, I use action hooks and filters to make it easier to extend or modify what I do. Also have experience working with multilingual themes and multisite too.</p>
-        <p>JavaScript flows through my veins now. I've built complex web applications and implemented highly dynamic interfaces with it. I've stepped out of the browser to build server-side and desktop applications with it, thanks to Node.js</p>
         <p>In my spare time I really enjoy reading and teaching others how to write code. Fun fact: I've taught kids in my neighborhood HTML + CSS and volunteered at <a href="http://ladieslearningcode.com">Ladies Learning Code</a> a number of times.</p>
       </div>
     </div>
