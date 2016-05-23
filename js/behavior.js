@@ -294,6 +294,11 @@ function setup_experience_module(){
         itemSelector: '.visible'
       });
 
+      state.experience.items.masonry.on('layoutComplete', function(){
+
+        jQuery.publish('new-layout-rendered');
+      });
+
     // update ui when experience filter is updated
     // -> #experience-filter-updated | string
       jQuery.subscribe('experience-filter-updated', function filter_experience_items( e, filter ){
