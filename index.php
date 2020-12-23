@@ -31,10 +31,10 @@
       </div>
       <div class="title">Background</div>
       <div class="subtitle">Just a little bit about me</div>
-      <div class="content"> 
+      <div class="content">
         <p>I'm Uzo Olisemeka, a JavaScript and WordPress developer currently in Toronto, Canada.</p>
-        <p>I started off building websites back in 2009. <a href="http://www.mizbeach.com">My first website</a> is still up! I've come a long way since then.</p>
-        <p>In my spare time I really enjoy reading and teaching others how to write code. Fun fact: I've taught kids in my neighborhood HTML + CSS and volunteered at <a href="http://ladieslearningcode.com">Ladies Learning Code</a> a number of times.</p>
+        <p>Started off building websites back in 2009. Still super-proud of <a href="http://archives.mizbeach.com/v2">my first website</a>, built from scratch as a custom WordPress theme.</p>
+        <p>Since then, I've focused on building my understanding of different technology and using the acquired knowledge / experience to create practical solutions to real problems.</p>
       </div>
     </div>
 
@@ -83,7 +83,7 @@
               <li>Node.js</li>
               <li>Web App</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p><a href="http://18techs.com">18Techs</a> needed to build receipt printer software with very special requirements.</p>
             <ol>
@@ -102,7 +102,7 @@
               <li>WordPress</li>
               <li>Theme</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
             <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
@@ -117,7 +117,7 @@
               <li>Web App</li>
               <li>Heroku</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>A simple utility web app built for <a href="http://unravellingnigeria.com">Unravelling Nigeria</a> to simplify adding watermarks on images.</p>
             <p>Drag and drop images into your browser and it will return a link to the watermarked version of the image.</p> 
@@ -133,7 +133,7 @@
               <li>Multisite</li>
               <li>Multilingual</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p><a href="http://visualinclination.com">Visual Inclination</a> was building a network of 60+ WordPress sites for a client.</p>
             <ol>
@@ -155,7 +155,7 @@
               <li>MongoDB</li>
               <li>Mandrill</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>CyclusBreak is a Student-Counsellor Relationship Manager built by <a href="http://blueportsoftware.com">Blueport Software</a>. It connects university students with their counsellors, making it easier for students to get the help needed for optimal academic and social success.</p> 
             <p>I automated report generation of CyclusBreak's business objectives. The reports were exported as Excel documents and emailed to appropriate stakeholders on a schedule.</p>
@@ -171,7 +171,7 @@
               <li>Electron</li>
               <li>Node.js</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>I <a href="http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to programmatically generate a report on all PDFs in a folder (and arbitrarily nested subfolders).</p> 
             <p>Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p>
@@ -190,7 +190,7 @@
               <li>RabbitMQ</li>
               <li>Socket.io</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>To solve <a href="http://wadup.com.ng">Wadup's</a> time-consuming and expensive process of downloading media assets to a laptop or phone just to reupload it on their servers, I <a href="http://designbymobi.us/transfer-files-to-your-blog-in-seconds/">built an app</a> to solve the problem.</p>
             <p>You give it a link and a filename to save the link's content as. The app streams the content of the file straight to Wadup's server.</p>
@@ -215,7 +215,7 @@
               <li>Heroku</li>
               <li>MySQL</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>I built a <a href="http://pricingapp.designbymobi.us">pricelist editor</a> to make pricing information simpler to update.</p> 
             <ol> 
@@ -234,7 +234,7 @@
               <li>Theme</li>
               <li>JavaScript</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p><a href="https://catalystworkshop.ca">Catalyst Workshop</a> was making huge upgrades to a client's site and I was responsible for bringing many of the designs to life.</p>
             <p>My primary responsibility was implementing the design and behavior of <a href="http://tdaglobalcycling.com/tour-dafrique">Tour Overview section</a>.</p> 
@@ -255,7 +255,7 @@
               <li>WordPress</li>
               <li>Theme</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>I brought the designs for <a href="http://sproutatwork.com">Sprout's</a> website to life.</p>
             <p>Some design elements were created in CSS so it would be easier to modify, instead of creating and deploying new assets. A light sprinkling of JavaScript was used to bring the menu button to life.</p>
@@ -271,13 +271,13 @@
               <li>Security</li>
               <li>Recovery</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>The <a href="http://marinemagnetics.com">Marine Magnetics</a> site was hacked and I was called in to bring it back online.</p>
             <ol>
               <li>The theme files were corrupted beyond recovery and there were no backups. I had to rebuild the site using a previous view from the Wayback Machine.</li>
               <li>I analyzed the WordPress installation, found the source of the malware and removed it.</li>
-            </ol>            
+            </ol>  
             <p>After recovery I noticed there were bugs in the site's JavaScript so I cleaned those up as well.</p>
           </div>
         </li>
@@ -292,7 +292,7 @@
               <li>Illustrator</li>
               <li>JavaScript</li>
             </ul>
-          </div>          
+          </div>
           <div class="notes">
             <p>I was commissioned to build <a href="http://yknightlights.designbymobi.us">a unique theme for a lifestyle blog</a>.We focused on building little details that created a delightful experience for the readers.</p> 
             <ol> 
