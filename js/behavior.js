@@ -330,6 +330,11 @@ function setup_experience_module(){
                 stringified_experience_types = stringified_experience_types.toLowerCase(),
                 experience_types = stringified_experience_types.split( ',' );
 
+            // trim experience types
+            experience_types.forEach( function( experience_type, index ){
+              experience_types[ index ] = experience_type.trim();
+            });
+
             if( experience_types.indexOf( filter ) > -1 ) jquery_experience_dom.addClass( 'visible' );
             else jquery_experience_dom.removeClass( 'visible' );
           });

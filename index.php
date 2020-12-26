@@ -225,7 +225,7 @@
             <p>Also built offline-capable <a href="http://retail.mizbeach.com">companion apps</a> for displaying the prices.</p>
           </div>
         </li>
-        <li class="item" data-type="wordpress" data-tags="theme">
+        <li class="item" data-type="wordpress, javascript" data-tags="theme">
           <div class="header">
             <div class="when">2013</div>
             <div class="title">Tour D'Afrique</div>
