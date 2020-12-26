@@ -315,16 +315,16 @@ function setup_experience_module(){
           break;
         }
 
-        var all_experiences = jQuery( '#experience > .items > .item' );
+        var jquery_all_experiences = jQuery( '#experience > .items > .item' );
 
         if( ! is_filtered ){
-          all_experiences.forEach( function( experience_dom ){
+          jquery_all_experiences.each( function( experience_dom ){
             jQuery( experience_dom ).addClass( 'visible' );
           });
         }
 
         else {
-          all_experiences.forEach( function( experience_dom ){
+          jquery_all_experiences.each( function( experience_dom ){
             var jquery_experience_dom = jQuery( experience_dom ),
                 stringified_experience_types = jquery_experience_dom.attr( 'data-type' ),
                 stringified_experience_types = stringified_experience_types.toLowerCase(),
