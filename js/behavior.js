@@ -335,7 +335,7 @@ function setup_experience_module(){
               experience_types[ experience_type_index ] = experience_type.trim();
             });
 
-            if( experience_types.indexOf( filter ) > -1 ) jquery_experience_dom.addClass( 'visible' );
+            if( experience_types.indexOf( filter_name ) > -1 ) jquery_experience_dom.addClass( 'visible' );
             else jquery_experience_dom.removeClass( 'visible' );
           });
         }
