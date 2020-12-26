@@ -299,45 +299,43 @@ function setup_experience_module(){
     // -> #experience-filter-updated | string
       jQuery.subscribe('experience-filter-updated', function filter_experience_items( e, filter ){
 
-        var filtered = null;
+        var is_filtered = false,
+            filter_name;
 
         switch( filter ){
 
           case 'wp':
-
-            filtered = 'wordpress';
+            is_filtered = true;
+            filter_name = 'wordpress';
           break;
 
           case 'js':
-
-            filtered = 'javascript';
+            is_filtered = true;
+            filter_name = 'javascript';
           break;
         }
 
         var all_experiences = jQuery( '#experience > .items > .item' );
 
-        for( var i = 0; i < all_experiences.length; i++ ){
-          
-          var experience = jQuery( all_experiences[i] );
+        if( ! is_filtered ){
+          all_experiences.forEach( function( experience_dom ){
+            jQuery( experience_dom ).addClass( 'visible' );
+          });
+        }
 
-          if( !filtered ){
+        else {
+          all_experiences.forEach( function( experience_dom ){
+            var jquery_experience_dom = jQuery( experience_dom ),
+                stringified_experience_types = jquery_experience_dom.attr( 'data-type' ),
+                stringified_experience_types = stringified_experience_types.toLowerCase(),
+                experience_types = stringified_experience_types.split( ',' );
 
-            experience.addClass('visible');
-            continue;
-          }
-              
-          var experience_type = experience.attr('data-type');
+            if( experience_types.indexOf( filter ) > -1 ) jquery_experience_dom.addClass( 'visible' );
+            else jquery_experience_dom.removeClass( 'visible' );
+          });
+        }
 
-          if( experience_type.toLowerCase() == filtered ){
-
-            experience.addClass('visible');
-            continue;
-          }
-
-          experience.removeClass('visible'); 
-        };
-
-        jQuery.publish('filter-experience-completed');
+        jQuery.publish( 'filter-experience-completed' );
       });
 
     // update ui when experience tag is updated
