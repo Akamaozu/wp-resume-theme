@@ -1,5 +1,4 @@
 <?php
-  
   // load default css & js
     wp_enqueue_style( 'theme-base-style' );
     wp_enqueue_script( 'theme-behavior' );
@@ -104,7 +103,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p> 
+            <p><a href="http://zikoko.com">Zikoko, the Nigerian equivalent of BuzzFeed</a>, wanted to build a simple yet engaging <a href="http://polls.zikoko.com">web app for Polls</a>. Since the rest of the their digital properties are powered by WordPress, it made sense to build it as a WordPress app.</p>
             <p>I worked closely with their technical lead to design and implement the APIs and data structures needed for the app.</p>
             <p>I implemented a system for polls to insert ads and prompts to share after the user has shown a certain level of engagement.</p>
           </div>
@@ -120,7 +119,7 @@
           </div>
           <div class="notes">
             <p>A simple utility web app built for <a href="http://unravellingnigeria.com">Unravelling Nigeria</a> to simplify adding watermarks on images.</p>
-            <p>Drag and drop images into your browser and it will return a link to the watermarked version of the image.</p> 
+            <p>Drag and drop images into your browser and it will return a link to the watermarked version of the image.</p>
           </div>
         </li>
         <li class="item" data-type="wordpress" data-tags="theme, multisite, multilingual">
@@ -142,7 +141,7 @@
               <li>Each studio generated their own content, but also received content from the HQ site.</li>
               <li>Each site was fully translatable to three different languages.</li>
             </ol>
-            <p>After simplifying complex data dependencies needed to generate key pages, the sites were built and successfully deployed.</p> 
+            <p>After simplifying complex data dependencies needed to generate key pages, the sites were built and successfully deployed.</p>
           </div>
         </li>
         <li class="item" data-type="javascript" data-tags="meteor, web app">
@@ -157,7 +156,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p>CyclusBreak is a Student-Counsellor Relationship Manager built by <a href="http://blueportsoftware.com">Blueport Software</a>. It connects university students with their counsellors, making it easier for students to get the help needed for optimal academic and social success.</p> 
+            <p>CyclusBreak is a Student-Counsellor Relationship Manager built by <a href="http://blueportsoftware.com">Blueport Software</a>. It connects university students with their counsellors, making it easier for students to get the help needed for optimal academic and social success.</p>
             <p>I automated report generation of CyclusBreak's business objectives. The reports were exported as Excel documents and emailed to appropriate stakeholders on a schedule.</p>
             <p>I also implemented the app's invitation system, notifications (in-app and via email) and some admin config interfaces.</p>
           </div>
@@ -173,7 +172,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p>I <a href="http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to programmatically generate a report on all PDFs in a folder (and arbitrarily nested subfolders).</p> 
+            <p>I <a href="http://designbymobi.us/how-i-built-my-first-desktop-app-in-3-days/">created a desktop app</a> to programmatically generate a report on all PDFs in a folder (and arbitrarily nested subfolders).</p>
             <p>Instead of taking three staff members an entire weekend, the PDF Page Counter reduced it to a 20 minute job for one individual.</p>
           </div>
         </li>
@@ -217,9 +216,9 @@
             </ul>
           </div>
           <div class="notes">
-            <p>I built a <a href="http://pricingapp.designbymobi.us">pricelist editor</a> to make pricing information simpler to update.</p> 
-            <ol> 
-              <li>The app works in your browser without an internet connection.</li> 
+            <p>I built a <a href="http://pricingapp.designbymobi.us">pricelist editor</a> to make pricing information simpler to update.</p>
+            <ol>
+              <li>The app works in your browser without an internet connection.</li>
               <li>You can work when the app is offline; it will push your changes to the server when you get back online.</li>
             </ol>
             <p>Also built offline-capable <a href="http://retail.mizbeach.com">companion apps</a> for displaying the prices.</p>
@@ -237,12 +236,12 @@
           </div>
           <div class="notes">
             <p><a href="https://catalystworkshop.ca">Catalyst Workshop</a> was making huge upgrades to a client's site and I was responsible for bringing many of the designs to life.</p>
-            <p>My primary responsibility was implementing the design and behavior of <a href="http://tdaglobalcycling.com/tour-dafrique">Tour Overview section</a>.</p> 
-            <ol> 
-              <li>Each tour overview and sections are independent pages with unique URLs, but loaded subsequent sections dynamically.</li> 
-              <li>Map embeds for each tour section are loaded dynamically to avoid unnecessary downloads of heavy assets. Embeds were also cached to prevent more data and time waste for visiting a section multiple times.</li> 
-              <li>URLs dynamically updated when sections changed.</li> 
-              <li>Clicking on a section in the tour breakdown dynamically loaded the section and scrolled the visitor to the section details.</li> 
+            <p>My primary responsibility was implementing the design and behavior of <a href="http://tdaglobalcycling.com/tour-dafrique">Tour Overview section</a>.</p>
+            <ol>
+              <li>Each tour overview and sections are independent pages with unique URLs, but loaded subsequent sections dynamically.</li>
+              <li>Map embeds for each tour section are loaded dynamically to avoid unnecessary downloads of heavy assets. Embeds were also cached to prevent more data and time waste for visiting a section multiple times.</li>
+              <li>URLs dynamically updated when sections changed.</li>
+              <li>Clicking on a section in the tour breakdown dynamically loaded the section and scrolled the visitor to the section details.</li>
             </ol>
             <p>My favorite part of was the strategies employed to keep the page behavior very fast. The redesign was beautiful, but the experience would have been subpar if the section was sluggish.</p>
           </div>
@@ -277,7 +276,7 @@
             <ol>
               <li>The theme files were corrupted beyond recovery and there were no backups. I had to rebuild the site using a previous view from the Wayback Machine.</li>
               <li>I analyzed the WordPress installation, found the source of the malware and removed it.</li>
-            </ol>  
+            </ol>
             <p>After recovery I noticed there were bugs in the site's JavaScript so I cleaned those up as well.</p>
           </div>
         </li>
@@ -294,11 +293,11 @@
             </ul>
           </div>
           <div class="notes">
-            <p>I was commissioned to build <a href="http://yknightlights.designbymobi.us">a unique theme for a lifestyle blog</a>.We focused on building little details that created a delightful experience for the readers.</p> 
-            <ol> 
-              <li>When your mouse hovered on a preview card, other page elements dimmed to create more emphasis.</li> 
-              <li>Keyboard arrow keys were augmented to scroll through the post preview cards.</li> 
-              <li>When you visit a post page, the interface scrolls you directly to the content.</li> 
+            <p>I was commissioned to build <a href="http://yknightlights.designbymobi.us">a unique theme for a lifestyle blog</a>.We focused on building little details that created a delightful experience for the readers.</p>
+            <ol>
+              <li>When your mouse hovered on a preview card, other page elements dimmed to create more emphasis.</li>
+              <li>Keyboard arrow keys were augmented to scroll through the post preview cards.</li>
+              <li>When you visit a post page, the interface scrolls you directly to the content.</li>
               <li>Up and down arrow keys on the keyboard were context-aware, automatically scrolling to sections unless it was in the article body, in which case it behaved normally.</li>
             </ol>
             <p>In addition to building the theme from scratch, I also illustrated their logo.</p>
