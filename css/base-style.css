@@ -123,7 +123,6 @@ body.scroll-lock {
   }
 
   #about-me > .content > p > a {
-
     color: green;
     font-weight: 900;
   }
@@ -343,13 +342,16 @@ body.scroll-lock {
         font-size: 90%;
       }
 
+        #experience > .items > .item > .notes > ol > li > a {
+          color: green;
+        }
+
       #experience > .items > .item > .notes > p:last-of-type {
 
         margin-bottom: 0;
       }
 
         #experience > .items > .item > .notes > p > a {
-
           font-weight: 900;
           color: green;
         }

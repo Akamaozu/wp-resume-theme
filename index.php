@@ -72,6 +72,28 @@
       <ul class="tags">
       </ul>
       <ul class="items">
+        <li class="item" data-type="wordpress, javascript" data-tags="theme, multisite, heroku, node.js, mysql, redis, rabbitmq">
+          <div class="header">
+            <div class="when">2016 - 2018</div>
+            <div class="title">Hubbli</div>
+            <ul class="tags">
+              <li>WordPress</li>
+              <li>Multisite</li>
+              <li>Custom Plugins</li>
+              <li>API Integration</li>
+              <li>Node.js</li>
+              <li>Heroku</li>
+            </ul>
+          </div>
+          <div class="notes">
+            <p>Hubbli is a School Communication platform, designed to streamline communication between parents, teachers and school admins.</p>
+            <p>Was responsible for integrating payment APIs, building a digital invoicing system and a number of other platform critical features.</p>
+            <p>Personal Highlights:</p>
+            <ol>
+              <li>Wiring up our system to <a href="http://designbymobi.us/the-most-important-slackbot/" target="_blank">send critical events and errors to Slack</a>.</li>
+              <li>When the servers were overwhelmed by third-party webhooks, built a Node.js system to receive and queue the incoming messages, then send them back to the overworked WordPress at a controlled rate.</li>
+          </div>
+        </li>
         <li class="item" data-type="javascript" data-tags="electron, node.js">
           <div class="header">
             <div class="when">2016</div>
@@ -99,7 +121,7 @@
             <div class="title">Zikoko Polls</div>
             <ul class="tags">
               <li>WordPress</li>
-              <li>Theme</li>
+              <li>Custom Theme</li>
             </ul>
           </div>
           <div class="notes">
@@ -128,7 +150,7 @@
             <div class="title">Moksha Yoga</div>
             <ul class="tags">
               <li>Wordpress</li>
-              <li>Theme</li>
+              <li>Custom Theme</li>
               <li>Multisite</li>
               <li>Multilingual</li>
             </ul>
@@ -197,19 +219,19 @@
                 <li>The app is decoupled. Individual services communicate using pubsub via Redis.</li>
                 <li>Push requests are placed on a queue (RabbitMQ), workers process the queue.</li>
                 <li>Workers use Socket.io to communicate transfer progress to the web app.</li>
-                <li>Everything is comfortably hosted on a Heroku free plan. Even more savings for Wadup.</li> 
+                <li>Everything is comfortably hosted on a Heroku free plan. Even more savings for Wadup.</li>
               </ol>
             <p>To date, the app has sucessfully streamed gigabytes of content directly to their servers, providing significant savings in operations cost.</p>
           </div>
         </li>
-        <li class="item" data-type="javascript" data-tags="web app, react, offline, node.js, heroku, mysql">
+        <li class="item" data-type="javascript" data-tags="web app, react, appcache, node.js, heroku, mysql">
           <div class="header">
             <div class="when">2014</div>
             <div class="title">Mizbeach Pricelist Editor</div>
             <ul class="tags">
               <li>Web App</li>
-              <li>Offline-Capable</li>
               <li>Node.js</li>
+              <li>AppCache</li>
               <li>React</li>
               <li>Heroku</li>
               <li>MySQL</li>
@@ -230,7 +252,7 @@
             <div class="title">Tour D'Afrique</div>
             <ul class="tags">
               <li>WordPress</li>
-              <li>Theme</li>
+              <li>Custom Theme</li>
               <li>JavaScript</li>
             </ul>
           </div>
@@ -252,7 +274,7 @@
             <div class="title">Sprout at Work</div>
             <ul class="tags">
               <li>WordPress</li>
-              <li>Theme</li>
+              <li>Custom Theme</li>
             </ul>
           </div>
           <div class="notes">
@@ -286,7 +308,7 @@
             <div class="title">YKNightlights</div>
             <ul class="tags">
               <li>WordPress</li>
-              <li>Theme</li>
+              <li>Custom Theme</li>
               <li>Photoshop</li>
               <li>Illustrator</li>
               <li>JavaScript</li>
