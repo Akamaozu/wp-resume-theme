@@ -32,8 +32,8 @@
       <div class="subtitle">Just a little bit about me</div>
       <div class="content">
         <p>I'm Uzo Olisemeka, a JavaScript and WordPress developer currently in Toronto, Canada.</p>
-        <p>Started off building websites back in 2009. Still super-proud of <a href="http://archives.mizbeach.com/v2">my first website</a>, built from scratch as a custom WordPress theme.</p>
-        <p>Since then, I've focused on building my understanding of different technology and using the acquired knowledge / experience to create practical solutions to real problems.</p>
+        <p>Started off building websites back in 2009. Still super-proud of <a href="http://archives.mizbeach.com/v2" target="_blank">my first website</a>, built from scratch as a custom WordPress theme.</p>
+        <p>Since then, I've built more custom themes and plugins, sped up slow sites, fixed broken/hacked WordPress sites, integrated popular and obscure API integrations, picked up new technology and techniques, <a href="https://github.com/pulls?q=is%3Apr+author%3AAkamaozu+archived%3Afalse+is%3Aclosed+is%3Apublic" target="_blank">contributed fixes to open-source projects</a>, <a href="https://github.com/Akamaozu/node-supe" target="_blank">published</a> <a href="https://github.com/Akamaozu/cjs-sync-hooks" target="_blank">tools</a> <a href="https://github.com/Akamaozu/cjs-noticeboard" target="_blank">I've</a> <a href="https://github.com/Akamaozu/dxm-wp-metabox" target="_blank">written</a> and so much more.</p>
       </div>
     </div>
 
@@ -83,6 +83,7 @@
               <li>API Integration</li>
               <li>Node.js</li>
               <li>Heroku</li>
+              <li>RabbitMQ</li>
             </ul>
           </div>
           <div class="notes">
@@ -91,7 +92,7 @@
             <p>Personal Highlights:</p>
             <ol>
               <li>Wiring up our system to <a href="http://designbymobi.us/the-most-important-slackbot/" target="_blank">send critical events and errors to Slack</a>.</li>
-              <li>When the servers were overwhelmed by third-party webhooks, built a Node.js system to receive and queue the incoming messages, then send them back to the overworked WordPress at a controlled rate.</li>
+              <li>When the servers were overwhelmed by third-party webhooks, built a Node.js system to receive and queue the incoming messages, then send them back to the overworked WordPress server at a controlled rate.</li>
           </div>
         </li>
         <li class="item" data-type="javascript" data-tags="electron, node.js">
