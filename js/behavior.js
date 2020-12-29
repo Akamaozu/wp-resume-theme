@@ -105,7 +105,7 @@ function setup_about_me_module( state ){
 
       if( tag ) jQuery.publish( 'update-experience-tag', tag );
 
-      jQuery( document.body ).animate({ scrollTop: jQuery( '#experience' ).offset().top - state.header.dom.outerHeight() - 48 });
+      state.body.animate({ scrollTop: jQuery( '#experience' ).offset().top - state.header.dom.outerHeight() - 48 });
     });
 }
 
