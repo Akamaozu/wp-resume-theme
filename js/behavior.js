@@ -354,7 +354,22 @@ function setup_experience_module(){
           case 'js':
 
             var tag_filter = tag,
-                js_experiences = jQuery( '#experience > .items > .item[data-type=javascript]' );
+                jquery_all_experiences = jQuery( '#experience > .items > .item' ),
+                js_experiences = [];
+
+            jquery_all_experiences.each( function( index, experience_dom ){
+              var jquery_experience_dom = jQuery( experience_dom ),
+                  stringified_experience_types = jquery_experience_dom.attr( 'data-type' ),
+                  stringified_experience_types = stringified_experience_types.toLowerCase(),
+                  experience_types = stringified_experience_types.split( ',' );
+
+              // trim experience types
+              experience_types.forEach( function( experience_type, experience_type_index ){
+                experience_types[ experience_type_index ] = experience_type.trim();
+              });
+
+              if( experience_types.indexOf( 'javascript' ) > -1 ) js_experiences.push( experience_dom );
+            });
 
             for( var i = 0; i < js_experiences.length; i++ ){
               
