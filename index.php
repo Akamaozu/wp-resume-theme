@@ -24,9 +24,9 @@
     <div id="about-me" class="section">
       <div class="intro">
         <p>I <span class="fa fa-heart"></span> JavaScript</p>
-        <p class='subtext'>A wealth of experience using it server-side (<span class="filter emphasis" data-filter="js" data-tag="node.js">Node.js</span>, <span class="filter emphasis" data-filter="js" data-tag="meteor">Meteor</span>), in the browser (<span class="filter emphasis" data-filter="js" data-tag="web app">web apps</span>, <span class="filter emphasis" data-filter="js" data-tag="react">React</span>) and for desktop applications (<span class="filter emphasis" data-filter="js" data-tag="electron">Electron</span>).</p>
+        <p class='subtext'>A wealth of experience using it server-side (<span class="filter emphasis" data-filter="js" data-tag="node.js">Node.js</span>, <span class="filter emphasis" data-filter="js" data-tag="meteor">Meteor</span>), in the browser (<span class="filter emphasis" data-filter="js" data-tag="web app">web apps</span>, <span class="filter emphasis" data-filter="js" data-tag="react">React</span>), controlling browsers (<span class="filter emphasis">Puppeteer</span>, <span class="filter emphasis">PhantomJS</span> ) and for desktop applications (<span class="filter emphasis" data-filter="js" data-tag="electron">Electron</span>).</p>
         <p>I <span class="fa fa-heart"></span> WordPress</p>
-        <p class='subtext'>If you're building <span class="filter emphasis" data-filter="wp">themes</span> from scratch, maintaining or extending existing ones, I'd love to help.</p>
+        <p class='subtext'>If you're building or maintaining <span class="filter emphasis" data-filter="wp">custom themes / plugins</span>, managing multisites or a large install, give me a shout.</p>
       </div>
       <div class="title">Background</div>
       <div class="subtitle">Just a little bit about me</div>
