@@ -1,74 +1,82 @@
 var state = {};
 
-    state.body = jQuery( document.body );
+cache_jquery_wrapper_of_commonly_used_dom_elements( state );
+setup_header_module( state );
+setup_about_me_module( state );
+setup_experience_module( state );
+setup_contact_form( state );
+setup_telemetry( state );
+start_app( state );
 
-// BOOTSTRAP ENVIRONMENT
-  
-  setup_header_module( state );
-  setup_about_me_module( state ); 
-  setup_experience_module();
-  setup_contact_form( state );
-  setup_telemetry();
+function cache_jquery_wrapper_of_commonly_used_dom_elements( state ){
+  state.jquery_dom_cache = {};
 
-  // on start ...
-    jQuery( document ).ready( function(){
+  state.jquery_dom_cache.html = jQuery( 'html' );
+  state.jquery_dom_cache.body = jQuery( document.body );
+  state.jquery_dom_cache.document = jQuery( document );
+  state.jquery_dom_cache.window = jQuery( window );
 
-      // set default filter to all
-        jQuery.publish( 'update-experience-filter', 'all' );
-    });
+  state.jquery_dom_cache.main_header = jQuery( '#main-header' );
+  state.jquery_dom_cache.main_header_contact_btn = state.jquery_dom_cache.main_header.find( '.contact-me' );
+
+  state.jquery_dom_cache.about_me = jQuery( '#about-me' );
+}
 
 function setup_header_module( state ){
+  state.header = {};
 
-  state.header = {};  
-  state.header.dom = jQuery('#main-header');
-  state.header.contact_me_dom = jQuery( '#main-header > .contact-me' );
+  manage_header_detachment_on_scroll( state );
+  detect_header_size_changes( state );
+  manage_contact_form_btn_display_state( state );
+  activate_contact_form_btn( state );
 
-  setup_detacher();
-  setup_resize_sensor();
-  setup_contact_form_controls();
+  function manage_header_detachment_on_scroll( state ){
+    var window_dom = state.jquery_dom_cache.window,
+        main_header_dom = state.jquery_dom_cache.main_header;
 
-  state.header.contact_me_dom.on('click', function(){
+    window_dom.on( 'scroll', jQuery.throttle( 20, function(){
+      if( window_dom.scrollTop() > 0 ){
+        main_header_dom.addClass( 'detached' );
+        state.header.detached = true;
 
-    jQuery.publish( 'toggle-contact-form' );
-  });
+        jQuery.publish( 'main-header-detached' );
+      }
 
-  function setup_detacher(){
+      else {
+        main_header_dom.removeClass( 'detached' );
+        state.header.detached = false;
 
-    var page = jQuery( window );
-
-    page.on( 'scroll', jQuery.throttle( 20, function(){
-
-      if( page.scrollTop() > 0 ) state.header.dom.addClass( 'detached' );
-      else state.header.dom.removeClass( 'detached' );
+        jQuery.publish( 'main-header-attached' );
+      }
     }));
   }
 
-  function setup_resize_sensor(){
-    
-    ResizeSensor( state.header.dom[0], jQuery.debounce( 20, function(){
-    
-      jQuery.publish( 'main-header-resized', state.header.dom[0] );
+  function detect_header_size_changes( state ){
+    var main_header = state.jquery_dom_cache.main_header,
+        main_header_dom = main_header.get( 0 );
+
+    ResizeSensor( main_header_dom, jQuery.debounce( 20, function(){
+      jQuery.publish( 'main-header-resized' );
     }));
   }
 
-  function setup_contact_form_controls(){
-    
-    jQuery.subscribe('show-contact-form', function(){
+  function manage_contact_form_btn_display_state( state ){
+    var main_header_contact_btn = state.jquery_dom_cache.main_header_contact_btn;
 
-      var contact_btn = state.header.contact_me_dom;
-
-      contact_btn
-        .addClass('fa fa-times')
-        .html('');
+    jQuery.subscribe( 'show-contact-form', function(){
+      main_header_contact_btn.addClass( 'fa fa-times' ).html( '' );
     });
 
-    jQuery.subscribe('hide-contact-form', function(){
+    jQuery.subscribe( 'hide-contact-form', function(){
+      main_header_contact_btn.html( 'Contact Me' ).removeClass( 'fa fa-times' );
+    });
+  }
 
-      var contact_btn = state.header.contact_me_dom;
+  function activate_contact_form_btn( state ){
+    var main_header_contact_btn = state.jquery_dom_cache.main_header_contact_btn;
 
-      contact_btn
-        .html('Contact Me')
-        .removeClass('fa fa-times');
+    main_header_contact_btn.on( 'click', function(){
+      jQuery.publish( 'toggle-contact-form' );
     });
   }
 }
@@ -78,20 +86,6 @@ function setup_about_me_module( state ){
   state.about_me = {};
   state.about_me.dom = jQuery( '#about-me' );
 
-  // auto-adjust top padding of about me section as header resizes
-    jQuery.subscribe('main-header-resized', function( e, header ){
-
-      var header_dom; 
-
-      if ( state.header.dom ) header_dom = state.header.dom;
-      else if( header ) header_dom = jQuery( header );
-      else return;
-
-      var total_offset = jQuery( header_dom.offsetParent()[0] ).offset().top + header_dom.innerHeight();
-
-      state.about_me.dom.css( 'padding-top', total_offset + 'px' );
-    });
-
   // activate intro links
     jQuery( '#about-me > .intro .filter' ).on('click', function( e ){
 
@@ -99,23 +93,21 @@ function setup_about_me_module( state ){
           filter = link.attr('data-filter'),
           tag = link.attr('data-tag');
 
-      if( !filter || !state.header.dom ) return;
+      if( !filter || !state.jquery_dom_cache.main_header ) return;
 
       jQuery.publish( 'update-experience-filter', filter );
 
       if( tag ) jQuery.publish( 'update-experience-tag', tag );
-
-      state.body.animate({ scrollTop: jQuery( '#experience' ).offset().top - state.header.dom.outerHeight() - 48 });
     });
 }
 
-function setup_experience_module(){
-
+function setup_experience_module( state ){
   state.experience = {};
 
   setup_filter_module();
   setup_item_module();
   setup_tag_module();
+  setup_autoscroll_on_filter_module();
 
   function setup_filter_module(){
 
@@ -123,13 +115,11 @@ function setup_experience_module(){
     // -> #update-experience-filter | string
     // <- #experience-filter-updated | string
       jQuery.subscribe('update-experience-filter', function( e, filter ){
-
         if( typeof filter === 'undefined' ) return;
-        if( state.experience.filter === filter ) return;
 
         state.experience.filter = filter;
 
-        jQuery.publish('experience-filter-updated', filter);      
+        jQuery.publish('experience-filter-updated', filter);
       });
 
     // update active filter in dom when experience filter is changed
@@ -185,9 +175,7 @@ function setup_experience_module(){
     // -> #update-experience-tag | string
     // <- #experience-tag-updated | string
       jQuery.subscribe('update-experience-tag', function( e, tag ){
-
         if( typeof tag === 'undefined' ) return;
-        if( state.experience.tag === tag ) return;
 
         state.experience.tag = tag;
 
@@ -290,10 +278,7 @@ function setup_experience_module(){
     state.experience.items = jQuery( '#experience > .items' );
     
     // setup masonry
-      state.experience.items.masonry({
-
-        itemSelector: '.visible'
-      });
+      state.experience.items.masonry({ itemSelector: '.visible' });
 
     // update ui when experience filter is updated
     // -> #experience-filter-updated | string
@@ -416,6 +401,36 @@ function setup_experience_module(){
       jQuery.publish('new-layout-rendered');
     }
   }
+
+  function setup_autoscroll_on_filter_module(){
+    var debounced_scroll_to_items = jQuery.debounce( 50, scroll_to_experience_items );
+
+    jQuery.subscribe( 'enable-autoscroll-on-filter', function(){
+      if( state.experience.autoscroll_on_filter == true ) return;
+
+      jQuery.subscribe( 'filter-experience-completed', debounced_scroll_to_items );
+      jQuery.subscribe( 'filter-experience-by-tag-completed', debounced_scroll_to_items );
+
+      state.experience.autoscroll_on_filter = true;
+    });
+
+    jQuery.subscribe( 'disable-autoscroll-on-filter', function(){
+      jQuery.unsubscribe( 'filter-experience-completed', debounced_scroll_to_items );
+      jQuery.unsubscribe( 'filter-experience-by-tag-completed', debounced_scroll_to_items );
+
+      state.experience.autoscroll_on_filter = false;
+    });
+  }
+
+  function scroll_to_experience_items(){
+    var html = state.jquery_dom_cache.html,
+        experience_offset_top = jQuery( '#experience' ).offset().top,
+        main_header_outer_height = state.jquery_dom_cache.main_header.outerHeight(),
+        buffer_from_top = state.header.detached == true ? 42 : 24,
+        next_scroll_top = ( experience_offset_top - main_header_outer_height - buffer_from_top ).toFixed(0);
+
+    html.animate({ scrollTop: next_scroll_top }, 242 );
+  }
 }
 
 function setup_contact_form( state ){
@@ -428,7 +443,7 @@ function setup_contact_form( state ){
   // maintain alignment with resized header
     jQuery.subscribe('main-header-resized', function( e, header ){
 
-      var header = jQuery( header ),
+      var header = state.jquery_dom_cache.main_header,
           total_offset = jQuery( header.offsetParent()[0] ).offset().top + header.innerHeight();
 
       state.contact_form.dom.css( 'padding-top', total_offset + 'px' );
@@ -492,4 +507,16 @@ function setup_telemetry(){
 
       ga('send', 'pageview', '/');
     });
+}
+
+function start_app( state ){
+  state.jquery_dom_cache.document.ready( function(){
+    jQuery.subscribe( 'experience-filter-updated', enable_autoscroll_on_filter_once );
+    jQuery.publish( 'update-experience-filter', 'all' );
+
+    function enable_autoscroll_on_filter_once(){
+      jQuery.publish( 'enable-autoscroll-on-filter' );
+      jQuery.unsubscribe( 'experience-filter-updated', enable_autoscroll_on_filter_once );
+    }
+  });
 }
