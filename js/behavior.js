@@ -20,6 +20,9 @@ function cache_jquery_wrapper_of_commonly_used_dom_elements( state ){
   state.jquery_dom_cache.main_header_contact_btn = state.jquery_dom_cache.main_header.find( '.contact-me' );
 
   state.jquery_dom_cache.about_me = jQuery( '#about-me' );
+
+  state.jquery_dom_cache.experience_items_wrapper = jQuery( '#experience > .items' );
+  state.jquery_dom_cache.experience_items = jQuery( '#experience > .items> .item' );
 }
 
 function setup_header_module( state ){
@@ -168,7 +171,6 @@ function setup_experience_module( state ){
   }
 
   function setup_tag_module(){
-
     state.experience.persist_tag_state = {};
 
     // change state of experience tag
@@ -179,7 +181,7 @@ function setup_experience_module( state ){
 
         state.experience.tag = tag;
 
-        jQuery.publish('experience-tag-updated', tag);      
+        jQuery.publish('experience-tag-updated', tag );
       });
 
     // persist tag state when filter state updates
@@ -200,8 +202,7 @@ function setup_experience_module( state ){
       });
 
     // update tag module ui when filter state updates
-      jQuery.subscribe('experience-filter-updated', function render_tag_module( e, filter ){
-
+      jQuery.subscribe( 'experience-filter-updated', function render_tag_module( e, filter ){
         var tag_module = jQuery( '#experience > .tags' );
 
         switch( filter ){
@@ -217,18 +218,15 @@ function setup_experience_module( state ){
               case 'meteor':
               case 'node.js':
               case 'electron':
-                
                 active_tag = state.experience.tag;
               break;
 
               default:
-
                 active_tag = 'all';
               break;
             }
 
             tag_module.html(
-
               "<li data-tag='all' " + ( active_tag == 'all' ? 'class="active"' : '' ) + ">All</li>" +
               "<li data-tag='node.js' " + ( active_tag == 'node.js' ? 'class="active"' : '' ) + ">Node.js</li>" +
               "<li data-tag='electron' " + ( active_tag == 'electron' ? 'class="active"' : '' ) + ">Electron</li>" +
@@ -238,15 +236,13 @@ function setup_experience_module( state ){
           break;
 
           default:
-                   
-            tag_module.removeClass('active');      
+            tag_module.removeClass( 'active' );
           break;
         }
       });
 
     // reload previous tag state when returning to a new filter state
       jQuery.subscribe('experience-filter-updated', function reload_previous_tag_state(){
-
         var filter = state.experience.filter;
 
         switch( filter ){
@@ -264,21 +260,18 @@ function setup_experience_module( state ){
     // tag option click behavior
     // <- #update-experience-tag | string
       jQuery( '#experience > .tags' ).click( function( event ){
-
         var tag = jQuery( event.target ).attr( 'data-tag' );
+        if( ! tag ) return;
 
-        if( !tag ) return;
-
-        jQuery.publish('update-experience-tag', tag);
+        jQuery.publish('update-experience-tag', tag );
       });
   }
 
   function setup_item_module(){
-
     state.experience.items = jQuery( '#experience > .items' );
     
     // setup masonry
-      state.experience.items.masonry({ itemSelector: '.visible' });
+      state.jquery_dom_cache.experience_items_wrapper.masonry({ itemSelector: '.visible' });
 
     // update ui when experience filter is updated
     // -> #experience-filter-updated | string
@@ -300,16 +293,16 @@ function setup_experience_module( state ){
           break;
         }
 
-        var jquery_all_experiences = jQuery( '#experience > .items > .item' );
+        var experience_items = state.jquery_dom_cache.experience_items;
 
         if( ! is_filtered ){
-          jquery_all_experiences.each( function( index, experience_dom ){
+          experience_items.each( function( index, experience_dom ){
             jQuery( experience_dom ).addClass( 'visible' );
           });
         }
 
         else {
-          jquery_all_experiences.each( function( index, experience_dom ){
+          experience_items.each( function( index, experience_dom ){
             var jquery_experience_dom = jQuery( experience_dom ),
                 stringified_experience_types = jquery_experience_dom.attr( 'data-type' ),
                 stringified_experience_types = stringified_experience_types.toLowerCase(),
@@ -329,7 +322,7 @@ function setup_experience_module( state ){
       });
 
     // update ui when experience tag is updated
-    // -> #experience-tag-updated | string      
+    // -> #experience-tag-updated | string
       jQuery.subscribe('experience-tag-updated', function filter_experience_by_tag( e, tag ){
 
         var tag_module = jQuery( '#experience > .tags' );
@@ -339,10 +332,10 @@ function setup_experience_module( state ){
           case 'js':
 
             var tag_filter = tag,
-                jquery_all_experiences = jQuery( '#experience > .items > .item' ),
+                experience_items = state.jquery_dom_cache.experience_items,
                 js_experiences = [];
 
-            jquery_all_experiences.each( function( index, experience_dom ){
+            experience_items.each( function( index, experience_dom ){
               var jquery_experience_dom = jQuery( experience_dom ),
                   stringified_experience_types = jquery_experience_dom.attr( 'data-type' ),
                   stringified_experience_types = stringified_experience_types.toLowerCase(),
@@ -353,32 +346,25 @@ function setup_experience_module( state ){
                 experience_types[ experience_type_index ] = experience_type.trim();
               });
 
-              if( experience_types.indexOf( 'javascript' ) > -1 ) js_experiences.push( experience_dom );
+              if( experience_types.indexOf( 'javascript' ) > -1 ) js_experiences.push( jquery_experience_dom );
             });
 
             for( var i = 0; i < js_experiences.length; i++ ){
-              
-              var experience = jQuery( js_experiences[i] ),
+              var experience = js_experiences[i],
                   tags = experience.attr('data-tags').split(', ');
 
-              if( !tag_filter || tag_filter == 'all' ){
-
+              if( ! tag_filter || tag_filter == 'all' ){
                 experience.addClass('visible');
                 continue;
               }
 
               if( tags.indexOf( tag_filter ) > -1 ){
-
                 experience.addClass('visible');
                 continue;
               }
-                  
-              experience.removeClass('visible'); 
-            };
-          break;
 
-          default:
-                         
+              experience.removeClass( 'visible' );
+            };
           break;
         }
 
