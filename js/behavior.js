@@ -378,13 +378,12 @@ function setup_experience_module( state ){
       jQuery.subscribe('filter-experience-by-tag-completed', debounced_update_experience_masonry );
 
     function update_experience_masonry( forced ){
+      var experience_items_wrapper = state.jquery_dom_cache.experience_items_wrapper;
 
-      var experiences = state.experience.items;
+      experience_items_wrapper.masonry( 'reloadItems' );
+      experience_items_wrapper.masonry( 'layout' );
 
-      experiences.masonry('reloadItems');
-      experiences.masonry('layout');
-
-      jQuery.publish('new-layout-rendered');
+      jQuery.publish( 'new-layout-rendered' );
     }
   }
 
