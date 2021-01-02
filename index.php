@@ -72,6 +72,27 @@
       <ul class="tags">
       </ul>
       <ul class="items">
+        <li class="item" data-type="javascript" data-tags="heroku, node.js, puppeteer, redis, rabbitmq">
+          <div class="header">
+            <div class="when">2018 - 2020</div>
+            <div class="title">Spotgetter</div>
+            <ul class="tags">
+              <li>Node.js</li>
+              <li>Puppeteer</li>
+              <li>Redis</li>
+              <li>RabbitMQ</li>
+              <li>Heroku</li>
+            </ul>
+          </div>
+          <div class="notes">
+            <p>Spotgetter is process automation software for USMLE Step 2 CS medical exams. Instead of manually refreshing webpages looking for an availability that meets their requirements, Spotgetter automated the process of searching and getting a spot.</p>
+            <p>Personal Responsibilities:</p>
+            <ol>
+              <li>Automate spot search with PhantomJS.</li>
+              <li>Scaling from single-user manually-configured script to an automatically-configured multi-user app.</li>
+              <li>Bring down cost and increase performance using microservices communicating over RabbitMQ.</li>
+          </div>
+        </li>
         <li class="item" data-type="wordpress, javascript" data-tags="theme, multisite, heroku, node.js, mysql, redis, rabbitmq">
           <div class="header">
             <div class="when">2016 - 2018</div>
