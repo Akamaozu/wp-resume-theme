@@ -24,9 +24,9 @@
     <div id="about-me" class="section">
       <div class="intro">
         <p>I <span class="fa fa-heart"></span> JavaScript</p>
-        <p class='subtext'>A wealth of experience using it server-side (<span class="filter emphasis" data-filter="js" data-tag="node.js">Node.js</span>, <span class="filter emphasis" data-filter="js" data-tag="meteor">Meteor</span>), in the browser (<span class="filter emphasis" data-filter="js" data-tag="web app">web apps</span>, <span class="filter emphasis" data-filter="js" data-tag="react">React</span>), controlling browsers (<span class="filter emphasis">Puppeteer</span>, <span class="filter emphasis">PhantomJS</span> ) and for desktop applications (<span class="filter emphasis" data-filter="js" data-tag="electron">Electron</span>).</p>
+        <p class='subtext'>Excited for new opportunities to use JavaScript server-side (<span class="filter emphasis" data-filter="js" data-tag="node.js">Node.js</span>), in the browser (<span class="filter emphasis" data-filter="js" data-tag="web app">web apps</span>, <span class="filter emphasis" data-filter="js" data-tag="react">React</span>), controlling browsers (<span class="filter emphasis" data-filter="js" data-tag="puppeteer">Puppeteer</span>, <span class="filter emphasis" data-filter="js" data-tag="phantomjs">PhantomJS</span>) or in desktop applications (<span class="filter emphasis" data-filter="js" data-tag="electron">Electron</span>).</p>
         <p>I <span class="fa fa-heart"></span> WordPress</p>
-        <p class='subtext'>If you're building or maintaining <span class="filter emphasis" data-filter="wp">custom themes / plugins</span>, managing multisites or a large install, give me a shout.</p>
+        <p class='subtext'>Would love to join your team if you're building <span class="filter emphasis" data-filter="wp">custom themes / plugins</span>, managing multisites or large installs.</p>
       </div>
       <div class="title">Background</div>
       <div class="subtitle">Just a little bit about me</div>
@@ -72,20 +72,22 @@
       <ul class="tags">
       </ul>
       <ul class="items">
-        <li class="item" data-type="javascript" data-tags="heroku, node.js, puppeteer, redis, rabbitmq">
+        <li class="item" data-type="javascript" data-tags="heroku, node.js, puppeteer, phantomjs, redis, rabbitmq">
           <div class="header">
             <div class="when">2018 - 2020</div>
             <div class="title">Spotgetter</div>
             <ul class="tags">
               <li>Node.js</li>
               <li>Puppeteer</li>
+              <li>PhantomJS</li>
               <li>Redis</li>
               <li>RabbitMQ</li>
               <li>Heroku</li>
             </ul>
           </div>
           <div class="notes">
-            <p>Spotgetter is process automation software for USMLE Step 2 CS medical exams. Instead of manually refreshing webpages looking for an availability that meets their requirements, Spotgetter automated the process of searching and getting a spot.</p>
+            <p>Spotgetter is process automation software for USMLE Step 2 CS medical exams.</p>
+            <p>Instead of manually refreshing webpages looking for an availability that meets their requirements, Spotgetter automated the process of searching and getting a spot.</p>
             <p>Personal Responsibilities:</p>
             <ol>
               <li>Automate spot search with PhantomJS.</li>
