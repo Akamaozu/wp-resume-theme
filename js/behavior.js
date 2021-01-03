@@ -436,13 +436,11 @@ function setup_contact_form( state ){
 
   // prevent body from having scroll bars when contact form is visible
     jQuery.subscribe('show-contact-form', function(){
-
-      state.body.addClass( 'scroll-lock' );
+      state.jquery_dom_cache.body.addClass( 'scroll-lock' );
     });
 
     jQuery.subscribe('hide-contact-form', function(){
-
-      state.body.removeClass( 'scroll-lock' );
+      state.jquery_dom_cache.body.removeClass( 'scroll-lock' );
     });
 
   function setup_contact_form_controls(){
