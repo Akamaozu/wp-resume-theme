@@ -281,7 +281,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p><a href="https://catalystworkshop.ca">Catalyst Workshop</a> was making huge upgrades to a client's site and I was responsible for bringing many of the designs to life.</p>
+            <p><a href="https://catalystworkshop.com">Catalyst Workshop</a> was making huge upgrades to a client's site and I was responsible for bringing many of the designs to life.</p>
             <p>My primary responsibility was implementing the design and behavior of <a href="http://tdaglobalcycling.com/tour-dafrique">Tour Overview section</a>.</p>
             <ol>
               <li>Each tour overview and sections are independent pages with unique URLs, but loaded subsequent sections dynamically.</li>
@@ -302,7 +302,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p>I brought the designs for <a href="http://sproutatwork.com">Sprout's</a> website to life.</p>
+            <p><a href="https://catalystworkshop.ca" target="_blank">Catalyst Workshop</a> brought me on-board the project of designing <a href="http://web.archive.org/web/20130731145713/http://www.sproutatwork.com/">Sprout's</a> website.</p>
             <p>Some design elements were created in CSS so it would be easier to modify, instead of creating and deploying new assets. A light sprinkling of JavaScript was used to bring the menu button to life.</p>
             <p>Overall a pretty simple project technically, but it was a great showcase of turning a design into a WordPress theme.</p>
           </div>
@@ -318,7 +318,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p>The <a href="http://marinemagnetics.com">Marine Magnetics</a> site was hacked and I was called in to bring it back online.</p>
+            <p>The <a href="http://web.archive.org/web/20111212015838/http://www.marinemagnetics.com/">Marine Magnetics</a> site was hacked and I was called in by <a href="https://hypenotic.com" target="_blank">Hypenotic</a> to bring it back online.</p>
             <ol>
               <li>The theme files were corrupted beyond recovery and there were no backups. I had to rebuild the site using a previous view from the Wayback Machine.</li>
               <li>I analyzed the WordPress installation, found the source of the malware and removed it.</li>
