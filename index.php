@@ -86,7 +86,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p>Spotgetter is process automation software for USMLE Step 2 CS medical exams.</p>
+            <p><a href="http://web.archive.org/web/20200812115550/https://www.spotgetter.com/" target="_blank">Spotgetter</a> is process automation software for USMLE Step 2 CS medical exams.</p>
             <p>Instead of manually refreshing webpages looking for an availability that meets their requirements, Spotgetter automated the process of searching and getting a spot.</p>
             <p>Personal Responsibilities:</p>
             <ol>
@@ -110,7 +110,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p>Hubbli is a School Communication platform, designed to streamline communication between parents, teachers and school admins.</p>
+            <p><a href="htps://hubbli.com" target="_blank">Hubbli is a School Communication platform, designed to streamline communication between parents, teachers and school admins.</p>
             <p>Was responsible for integrating payment APIs, building a digital invoicing system and a number of other platform critical features.</p>
             <p>Personal Highlights:</p>
             <ol>
