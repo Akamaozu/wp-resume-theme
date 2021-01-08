@@ -110,7 +110,7 @@
             </ul>
           </div>
           <div class="notes">
-            <p><a href="htps://hubbli.com" target="_blank">Hubbli is a School Communication platform, designed to streamline communication between parents, teachers and school admins.</p>
+            <p><a href="htps://hubbli.com" target="_blank">Hubbli</a> is a School Communication platform, designed to streamline communication between parents, teachers and school admins.</p>
             <p>Was responsible for integrating payment APIs, building a digital invoicing system and a number of other platform critical features.</p>
             <p>Personal Highlights:</p>
             <ol>
