@@ -448,7 +448,7 @@ function setup_contact_form( state ){
   function close_contact_form_after_successful_submission(){
     var jquery_document = state.jquery_dom_cache.document;
 
-    jquery_document.on( 'wpcf7mailsent', function(){
+    jquery_document.on( 'wpcf7:mailsent', function(){
       setTimeout( jQuery.publish, 5000, 'hide-contact-form' );
     });
   }
