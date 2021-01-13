@@ -30,8 +30,6 @@ function setup_header_module( state ){
 
   manage_header_detachment_on_scroll( state );
   detect_header_size_changes( state );
-  manage_contact_form_btn_display_state( state );
-  activate_contact_form_btn( state );
 
   function manage_header_detachment_on_scroll( state ){
     var window_dom = state.jquery_dom_cache.window,
@@ -61,26 +59,6 @@ function setup_header_module( state ){
     ResizeSensor( main_header_dom, jQuery.debounce( 20, function(){
       jQuery.publish( 'main-header-resized' );
     }));
-  }
-
-  function manage_contact_form_btn_display_state( state ){
-    var main_header_contact_btn = state.jquery_dom_cache.main_header_contact_btn;
-
-    jQuery.subscribe( 'show-contact-form', function(){
-      main_header_contact_btn.addClass( 'fa fa-times' ).html( '' );
-    });
-
-    jQuery.subscribe( 'hide-contact-form', function(){
-      main_header_contact_btn.html( 'Contact Me' ).removeClass( 'fa fa-times' );
-    });
-  }
-
-  function activate_contact_form_btn( state ){
-    var main_header_contact_btn = state.jquery_dom_cache.main_header_contact_btn;
-
-    main_header_contact_btn.on( 'click', function(){
-      jQuery.publish( 'toggle-contact-form' );
-    });
   }
 }
 
@@ -422,8 +400,12 @@ function setup_contact_form( state ){
 
   state.contact_form = {};
   state.contact_form.dom = jQuery( '#contact-form' );
+  state.contact_form.is_active = false;
 
-  setup_contact_form_controls();
+  manage_contact_form_active_state();
+  manage_contact_form_btn_display_state();
+  close_contact_form_after_successful_submission();
+  activate_contact_form_btn();
 
   // maintain alignment with resized header
     jQuery.subscribe('main-header-resized', function( e, header ){
@@ -443,24 +425,51 @@ function setup_contact_form( state ){
       state.jquery_dom_cache.body.removeClass( 'scroll-lock' );
     });
 
-  function setup_contact_form_controls(){
+  function manage_contact_form_active_state(){
 
     jQuery.subscribe('show-contact-form', function(){
-
       state.contact_form.dom.addClass('active');
+      state.contact_form.is_active = true;
     });
 
     jQuery.subscribe('hide-contact-form', function(){
-
       state.contact_form.dom.removeClass('active');
+      state.contact_form.is_active = false;
     });
 
     jQuery.subscribe('toggle-contact-form', function(){
-
-      var is_active = state.contact_form.dom.hasClass( 'active' );
+      var is_active = state.contact_form.is_active == true;
 
       if( is_active ) jQuery.publish( 'hide-contact-form' );
       else jQuery.publish( 'show-contact-form' );
+    });
+  }
+
+  function close_contact_form_after_successful_submission(){
+    var jquery_document = state.jquery_dom_cache.document;
+
+    jquery_document.on( 'wpcf7mailsent', function(){
+      setTimeout( jQuery.publish, 5000, 'hide-contact-form' );
+    });
+  }
+
+  function manage_contact_form_btn_display_state(){
+    var main_header_contact_btn = state.jquery_dom_cache.main_header_contact_btn;
+
+    jQuery.subscribe( 'show-contact-form', function(){
+      main_header_contact_btn.addClass( 'fa fa-times' ).html( '' );
+    });
+
+    jQuery.subscribe( 'hide-contact-form', function(){
+      main_header_contact_btn.html( 'Contact Me' ).removeClass( 'fa fa-times' );
+    });
+  }
+
+  function activate_contact_form_btn(){
+    var main_header_contact_btn = state.jquery_dom_cache.main_header_contact_btn;
+
+    main_header_contact_btn.on( 'click', function(){
+      jQuery.publish( 'toggle-contact-form' );
     });
   }
 }
