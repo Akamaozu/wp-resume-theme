@@ -1,28 +1,26 @@
 <?php
-  
-  // register theme stylesheets      
+
+  // register theme stylesheets
     foreach( include( 'config/stylesheets.php' ) as $stylesheet ){
 
       if( !$stylesheet['name'] || !$stylesheet['src'] ){
-
         throw new Exception("Improperly defined stylesheet object in " . get_template_directory() . '/config/stylesheets.php' , 1);
       }
-      
+
       if( !$stylesheet['deps'] ) $stylesheet['deps'] = array();
       if( !$stylesheet['media'] ) $stylesheet['media'] = 'all';
       if( !$stylesheet['version'] ) $stylesheet['version'] = '0.0.1';
 
       wp_register_style( $stylesheet['name'], $stylesheet['src'], $stylesheet['deps'], $stylesheet['version'], $stylesheet['media'] );
     }
-  
-  // register theme javascript files      
+
+  // register theme javascript files
     foreach( include( 'config/javascript.php' ) as $script ){
 
       if( !$script['name'] || !$script['src'] ){
-
         throw new Exception("Improperly defined javascript object in " . get_template_directory() . '/config/javascript.php' , 1);
       }
-      
+
       if( !$script['deps'] ) $script['deps'] = array();
       if( !$script['version'] ) $script['version'] = '0.0.1';
       if( !$script['in_footer'] ) $script['in_footer'] = true;
