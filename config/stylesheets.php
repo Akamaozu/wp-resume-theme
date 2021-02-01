@@ -3,21 +3,18 @@
   $theme_stylesheet_directory = get_template_directory_uri();
 
   return array(
-    
-    array(
 
+    array(
       'src' =>  $theme_stylesheet_directory . '/css/reset.css',
       'name' => 'meyerweb-reset'
     ),
-    
-    array(
 
+    array(
       'src' =>  'https://fonts.googleapis.com/css?family=Exo:900|Satisfy|Roboto+Condensed',
       'name' => 'google-fonts'
     ),
-    
-    array(
 
+    array(
       'src' =>  $theme_stylesheet_directory . '/css/base-style.css',
       'name' => 'theme-base-style',
       'deps' => array('meyerweb-reset', 'google-fonts')
