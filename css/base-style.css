@@ -33,6 +33,12 @@ body.scroll-lock {
 
 }
 
+@media only print {
+  #main-header {
+    position: relative;
+  }
+}
+
   #main-header > .name,
   #main-header > .title {
 
